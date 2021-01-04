@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<style>
+    p{
+        background-color: lightblue;
+        color: darkblue ;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <fieldset style="background-color: yellow ; margin-right: 60%">
+        <p> <strong>ĐĂNG KÝ HỌC VIÊN </strong>  </p>
+        <label >Họ và Tên: </label>
+        <input style="margin-left: 10px" type="text" name="UserName" size="30"/>
+        <br>
+        <br>
+        <label> Ngày sinh : </label>
+        <input style="margin-left: 10px" type="date" name="yourDate">
+        <br>
+        <br>
+        <label>Giới tính : </label>
+        <input  style="margin-left: 20px" type="radio" name="gender"> Nam
+        <input type="radio" name="gender"> Nữ
+        <br>
+        <br>
+        <div style="display: flex">
+        <label style="display: inline-block;align-self: start;"> Địa chỉ :</label>
+        <textarea style="margin-left: 25px" cols="30" rows="10"></textarea>
+        </div>
+        <br>
+        <br>
+        <label> Lớp :</label>
+        <select style="margin-left: 45px">
+            <option  value=" "> --Chọn Lớp--</option>
+            <option> Lớp 10 </option>
+            <option> Lớp 11 </option>
+            <option> Lớp 12 </option>
+        </select>
+        <br>
+        <br>
+        <label> Email : </label>
+        <input style="margin-left: 33px" type="text" name="yourmail">
+        <br>
+        <br>
+        <label> Điện thoại : </label>
+        <input style="margin-left: 6px"type="number" name="telephone">
+        <br><br>
+        <input style="margin-left: 80px" type="submit" name="dangky" value="Đăng Ký">
+        <input  type="reset" name="reset" value="Nhập lại">
+    </fieldset>
+</form>
+</body>
+</html>
