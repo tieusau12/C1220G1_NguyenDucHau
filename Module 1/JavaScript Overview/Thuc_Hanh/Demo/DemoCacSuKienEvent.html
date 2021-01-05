@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Dùng cho sự kiên oninput-->
+ <input type="text" id="nhap"  placeholder="Demo oninput" oninput="thayDoiOnInput()">;
+<!--Dùng cho sự kiện onclick-->
+ <input type="text" id="nhap1" placeholder="Demo onclick" >;
+<!--Dùng cho onchange-->
+ <input type="text" id="nhap2" placeholder=" Demo onchange" onchange="thayDoiOnChange()">;
+<!--Dùng cho onmouseover-->
+ <input type="text" id="nhap3" placeholder=" Demo onmouseover//onmouseout">;
+ <p id="hienThi"></p>
+ <button type="button" onclick="thayDoiOnClick()">Onclick</button>
+ <button type="button" onmouseover="thayDoiMouse()">onmouseover</button>
+ <button type="button" onmouseout="thayDoiMouse()">onmouseout</button>
+    <script>
+
+        function thayDoiOnInput() {
+            let a = document.getElementById("nhap").value;
+            document.getElementById("hienThi").innerText=a;
+        }
+        function thayDoiOnClick() {
+            let a = document.getElementById("nhap1").value;
+            document.getElementById("hienThi").innerText=a;
+        }
+        function thayDoiOnChange() {
+            let a = document.getElementById("nhap2").value;
+            document.getElementById("hienThi").innerText=a;
+        }
+        function thayDoiMouse() {
+            let a = document.getElementById("nhap3").value;
+            document.getElementById("hienThi").innerText=a;
+        }
+    </script>
+</body>
+</html>
