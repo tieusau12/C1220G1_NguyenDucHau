@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+    <style>
+        /*định nghĩa 1 Css bằng id*/
+        #tieuDe{
+            background-color: tomato;
+        }
+        /*định nghĩa CSS bằng class*/
+        .tieuDe2{
+            background-color: green;
+        }
+        .tieuDe3{
+            color: blue;
+        }
+        /*định nghĩa CSS bằng tên thẻ html*/
+        th{
+            background-color: red;
+        }
+
+        table tr:nth-child(odd){
+            background-color: lightgreen;
+        }
+        table tr td:nth-child(even){
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+<table border="1" >
+    <tr style="background-color: tomato">
+        <th>Stt</th>
+        <th>Tên</th>
+        <th>Tuổi</th>
+        <th>Email</th>
+    </tr>
+    <tr class="tieuDe2 tieuDe3 " id="tieuDe">
+        <td>1</td>
+        <td>chánh</td>
+        <td>35</td>
+        <td>chanh@gmail.com</td>
+    </tr>
+    <tr >
+        <td>2</td>
+        <td>kha</td>
+        <td>26</td>
+        <td>kha@gmail.com</td>
+    </tr>
+    <tr id="">
+        <td>2</td>
+        <td>kha</td>
+        <td>26</td>
+        <td>kha@gmail.com</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>kha</td>
+        <td>26</td>
+        <td>kha@gmail.com</td>
+    </tr>
+
+</table>
+<table border="1">
+    <tr>
+        <th rowspan="2">STT</th>
+        <th rowspan="2">Môn hoc</th>
+        <th colspan="2">Số tiết</th>
+    </tr>
+    <tr>
+        <th >Thức hành</th>
+        <th >Lý thuyết</th>
+    </tr>
+    <tr>
+        <td >1</td>
+        <td >Java</td>
+        <td >2</td>
+        <td >3</td>
+    </tr>
+    <tr>
+        <td >Tổng</td>
+        <td colspan="3" style="text-align: center">23</td>
+    </tr>
+</table>
+</body>
+</html>

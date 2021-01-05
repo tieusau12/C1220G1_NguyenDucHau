@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form1</title>
+</head>
+<body>
+<form action="server.html" method="get">
+    // thuộc tính action là địa chỉ dữ liệu cần gửi tới, method là phương thức gửi (get/post)
+    <h1>Thông tin cá nhân</h1>
+    Tên <input type="text" name="name" placeholder="nhập tên"> <br><br>
+    <label for="age">Tuổi</label>
+    <input id="age" type="number" name="age" placeholder="nhập tuổi"><br><br>
+    Email <input type="email" name="email"><br><br>
+    Password <input type="password" name="password"><br><br>
+    Giới tính <input name="gender" type="radio"> Nam
+            <input name="gender" type="radio">Nữ<br><br>
+    Sở thích <input name="hobby" type="checkbox">Game
+            <input type="checkbox" name="hobby">Football
+            <input name="hobby" type="checkbox"> Play <br><br>
+    Địa chỉ <select name="address">
+                <option value="DN">Đà Nẵng</option>
+                <option value="HUE">Huế</option>
+                <option value="QN">Quảng Nam</option>
+            </select> <br><br>
+    // tạo button để gửi dữ liệu từ form lên server
+    <button type="submit" onclick="alert('đã gửi')"> Gửi thông tin</button>
+    // tạo button có kiểu reset để xóa dữ liệu trong form
+    <button type="reset"> Reset</button>
+    // tạo button có điểu button để tạo ra sự kiện khi kích chuột sẽ không gửi dữ liệu mà chỉ thực hiện việc in ra hộp thoại "xin chào"
+    <button type="button" onclick="alert('xin chào')"> xin chào</button>
+</form>
+</body>
+</html>
