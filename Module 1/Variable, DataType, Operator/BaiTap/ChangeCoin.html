@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="sotien"></td>
+        <td>
+            <select id="sel1" >
+                <option>Việt Nam</option>
+                <option>USD</option>
+            </select>
+        </td>
+        <td>
+            <select id="sel2" >
+                <option> USD</option>
+                <option> VND</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="change()" type="button" > Convert </button>
+        </td>
+    </tr>
+</table>
+<p id="changCoin"> </p>
+<script>
+    let sotien = document.getElementById('sotien');
+    let compareOne = document.getElementById("sel1");
+    let compareTwo = document.getElementById("sel2");
+    function change() {
+        let changeCoin;
+        if ((compareOne.value == 'Việt Nam') && (compareTwo.value =='USD')){
+            changeCoin = parseInt(sotien.value)/25000 + "USD";}
+        if ((compareOne.value == 'USD') && (compareTwo.value =='VND')){
+            changeCoin = parseInt(sotien.value)*25000 + "VND";}
+        if (compareTwo.value == compareOne.value){
+            alert(" Không thể chuyển đổi!!");}
+        document.getElementById('changCoin').innerText= 'Result :' + changeCoin ;
+ }
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let physical = prompt("Nhập vào điểm môn Lý : ") ;
+    let chemistry = prompt(' Nhập vào điểm môn Hóa : ');
+    let biological = prompt(" Nhập vào điểm môn Sinh : ") ;
+    let medium = (parseInt(physical) + parseInt(chemistry) + parseInt(biological)) /3 ;
+    let sum = parseInt(physical) + parseInt(chemistry) + parseInt(biological);
+    document.write('Điểm trung bình ba môn : '+ medium );
+    document.write('<br/>');
+    document.write(" Tổng điểm ba môn : " +sum);
+</script>
+</body>
+</html>
