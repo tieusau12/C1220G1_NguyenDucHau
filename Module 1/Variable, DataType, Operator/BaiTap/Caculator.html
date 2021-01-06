@@ -5,43 +5,52 @@
     <title>Title</title>
 </head>
 <body>
+<h1>Caculator</h1>
 <form>
     <input type="text" id="number1" >
     <input type="text" id="number2" style="margin-left: 20px"> <br><br>
-    <button type="button" onclick="addition();">Addition (+) </button>
-    <button type="button" onclick="subtraction();">Subtraction (-) </button>
-    <button type="button" onclick="multiplication();">Multiplication (*) </button>
-    <button type="button" onclick="division();">Division (/) </button>
+    <button type="button" onclick="cal('+');">Addition (+) </button>
+    <button type="button" onclick="cal('-');">Subtraction (-) </button>
+    <button type="button" onclick="cal('*');">Multiplication (*) </button>
+    <button type="button" onclick="cal('/');">Division (/) </button>
+<!--    <button type="button" onclick="addition();">Addition (+) </button>-->
+<!--    <button type="button" onclick="subtraction();">Subtraction (-) </button>-->
+<!--    <button type="button" onclick="multiplication();">Multiplication (*) </button>-->
+<!--    <button type="button" onclick="division();">Division (/) </button>-->
 </form>
 <p id="result"></p>
 <script>
-    function addition() {
-        let num1 = document.getElementById('number1').value;
-        let num2 = document.getElementById('number2').value;
+    let num1 = document.getElementById('number1');
+    let num2 = document.getElementById('number2');
+    // dùng từng function riêng lẻ
+    // function addition() {
+    //    let result = parseInt(num1.value) + parseInt(num2.value);
+    //     document.getElementById('result').innerText = 'Result : ' + result;
+    // }
+    // function subtraction() {
+    //    let result = parseInt(num1.value) - parseInt(num2.value);
+    //     document.getElementById('result').innerText = 'Result : ' + result;
+    // }
+    // function multiplication() {
+    //    let result = parseInt(num1.value) * parseInt(num2.value);
+    //     document.getElementById('result').innerText = 'Result : ' + result;
+    // }
+    // function division() {
+    //    let result = parseInt(num1.value)/parseInt(num2.value);
+    //     document.getElementById('result').innerText = 'Result : ' + result;
+    // }
+    // dùng 1 function
+    function cal(operator) {
         let result;
-        result = parseInt(num1) + parseInt(num2);
-        document.getElementById('result').innerText = 'Result : ' + result;
-    }
-    function subtraction() {
-        let num1 = document.getElementById('number1').value;
-        let num2 = document.getElementById('number2').value;
-        let result;
-        result = parseInt(num1) - parseInt(num2);
-        document.getElementById('result').innerText = 'Result : ' + result;
-    }
-    function multiplication() {
-        let num1 = document.getElementById('number1').value;
-        let num2 = document.getElementById('number2').value;
-        let result;
-        result = parseInt(num1) * parseInt(num2);
-        document.getElementById('result').innerText = 'Result : ' + result;
-    }
-    function division() {
-        let num1 = document.getElementById('number1').value;
-        let num2 = document.getElementById('number2').value;
-        let result;
-        result = parseInt(num1)/parseInt(num2);
-        document.getElementById('result').innerText = 'Result : ' + result;
+        if(operator === '+'){
+            result = parseInt(num1.value)+parseInt(num2.value);}
+        if( operator ==='-'){
+            result = parseInt(num1.value)-parseInt(num2.value);}
+        if(operator === '*'){
+            result = parseInt(num1.value)*parseInt(num2.value);}
+         if(operator === '/'){
+            result = parseInt(num1.value)/parseInt(num2.value);}
+        document.getElementById('result').innerHTML = 'Result : ' + result;
     }
 </script>
 </body>
