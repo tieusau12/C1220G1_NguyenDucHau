@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama Resort</title>
+</head>
+<body>
+<form>
+    <fieldset style="margin-right: 70%; background: #ff90cd">
+        <h3 style="text-align: center">Customer Information</h3>
+        <label><b> Full name :</b></label>
+        <input type="text" id="userName" style="margin-left: 25%"> <br> <br>
+        <label><b>ID Card :</b> </label>
+        <input type="number" id="identityCard" style="margin-left: 28%"> <br> <br>
+        <label><b>Year of birth :</b></label>
+        <input type="date" id="age" style="margin-left: 20%"> <br> <br>
+        <label><b>Email : </b></label>
+        <input type="text" id="email" style="margin-left: 32%"> <br> <br>
+        <label><b>Address :</b> </label>
+        <input type="text" id="address" style="margin-left: 28%"> <br> <br>
+        <label><b>Customer :</b> </label>
+        <select id="customer" style="margin-left: 25%">
+            <option >Diamond</option>
+            <option >Platinum</option>
+            <option >Gold</option>
+            <option >Silver</option>
+            <option >Member</option>
+        </select> <br><br>
+        <label><b> Discount :</b> </label>
+        <input type="text" id="discount" style="margin-left: 26%"><br> <br>
+        <label><b>Amount of people :</b> </label>
+        <input type="number" id="people" style="margin-left: 10%"> <br> <br>
+        <label><b> Number of rental days :</b> </label>
+        <input type="number" id="rentDays" style="margin-left: 2%"> <br> <br>
+        <label><b>Type of service :</b></label>
+        <select  id="service" style="margin-left: 16%">
+            <option value="500" >- Villa 500$/ 1 day</option>
+            <option value="300" >- House 300$/1 day</option>
+            <option value="100" >- Room: 100$/1 day</option>
+        </select> <br> <br>
+        <label> <b>Room classification :</b> </label>
+        <select id="room" style="margin-left: 8%">
+            <option>Vip</option>
+            <option>Business</option>
+            <option>Normal</option>
+        </select> <br><br>
+        <button type="button" onclick="onchage()" style="margin-left: 46%">Submit</button>
+    </fieldset>
+</form>
+<script src="Task.js">
+
+</script>
+</body>
+</html>
