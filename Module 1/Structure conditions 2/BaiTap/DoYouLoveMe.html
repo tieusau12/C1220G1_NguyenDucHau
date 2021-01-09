@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    button{
+        position: absolute;
+        left: auto;
+        top: auto;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Do you love me</title>
+</head>
+<body>
+<h2>Do you love me</h2>
+<input type="button" id="yes" value="Yes" onclick="yesLoveYou()">
+<button id="no" onmouseover="random1()" style="position: absolute;left:auto;top: auto">No</button>
+</body>
+<script>
+    function yesLoveYou() {
+        alert("<3")
+    }
+    function random1() {
+        let mouseRandom = document.getElementById('no');
+        let xa = Math.round(Math.random()*window.innerWidth);
+        let ya = Math.round(Math.random()*window.innerHeight);
+        mouseRandom.style.left = xa + 'px'
+        mouseRandom.style.top = ya + 'px'
+    }
+
+</script>
+</html>

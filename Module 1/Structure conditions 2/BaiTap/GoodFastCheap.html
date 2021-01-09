@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="GoodFastChess.css">
+</head>
+<body>
+<div class="toggle">
+    <label class="switch">
+        <input type="checkbox" class="good" value="good" id="good" onclick="random(this.value)">
+        <span class="slider round"></span>
+    </label>
+    <label>Good</label>
+</div>
+<div class="toggle">
+    <label class="switch">
+        <input type="checkbox" class="fast"  value="fast" id="fast" onclick="random(this.value)">
+        <span class="slider round"></span>
+    </label>
+    <label>Fast</label>
+</div>
+​
+<div class="toggle">
+    <label class="switch">
+        <input type="checkbox" class="cheap" value="cheap" id="cheap" onclick="random(this.value)">
+        <span class="slider round"></span>
+    </label>
+    <label>Cheap</label>
+</div>
+​<script>
+    function random(value) {
+        let good = document.getElementById('good');
+        let fast = document.getElementById('fast');
+        let cheap = document.getElementById('cheap');
+        switch (value) {
+            case "good":
+                if (fast.checked === true && cheap.checked === true){
+                    cheap.checked = false;
+                }
+                break;
+            case "fast":
+                if (good.checked === true && cheap.checked === true){
+                    good.checked = false;
+                }
+                break;
+            case "cheap":
+                if (fast.checked === true && good.checked === true){
+                    fast.checked = false;
+                }
+                break;
+        }
+    }
+</script>
+</body>
+</html>

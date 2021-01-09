@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Puzzle</title>
+</head>
+<body>
+<img id="img1" src="GamePuzzle/no1.1.png" onclick="click1()">
+<br>
+<img id="img2" src="GamePuzzle/no2.2.png" onclick="click2()">
+<br>
+<img id="img3" src="GamePuzzle/no3.3.png" onclick="click3()">
+</body>
+<script>
+    let img = document.getElementById("img1");
+    let img1 = document.getElementById("img2");
+    let img2 = document.getElementById("img3");
+    function click1() {
+        let link = img.getAttribute('src');
+        if (link == "GamePuzzle/no1.1.png") {
+            img.src = "GamePuzzle/no2.1.png";
+
+        } else if (link == "GamePuzzle/no2.1.png"){
+            img.src = "GamePuzzle/no3.1.png";
+        }else{
+            img.src = "GamePuzzle/no1.1.png";
+        }
+    }
+
+    function click2() {
+        let link = img1.getAttribute('src');
+        if (link == "GamePuzzle/no1.2.png") {
+            img1.src = "GamePuzzle/no2.2.png";
+
+        } else if (link == "GamePuzzle/no2.2.png"){
+            img1.src = "GamePuzzle/no3.2.png";
+        }else{
+            img1.src = "GamePuzzle/no1.2.png";
+        }
+    }
+
+    function click3() {
+        let link = img2.getAttribute('src');
+        if (link == "GamePuzzle/no3.3.png") {
+            img2.src = "GamePuzzle/no1.3.png";
+
+        } else if (link == "GamePuzzle/no1.3.png"){
+            img2.src = "GamePuzzle/no2.3.png";
+        }else{
+            img2.src = "GamePuzzle/no3.3.png";
+        }
+    }
+</script>
+</html>

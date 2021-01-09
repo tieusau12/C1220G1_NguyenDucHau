@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .button {
+        padding: 15px;
+        width: 60px;
+    }
+
+    fieldset {
+        width: 10%;
+        margin: auto;
+        background-color: #888888;
+    }
+
+    input {
+        width: 250px;
+    }
+
+    .text {
+        height: 40px;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính đơn giản</title>
+</head>
+<body>
+<form name="cal">
+    <fieldset>
+        <input type="text" name="display" id="display1" class="text" disabled>
+        <br><br>
+        <input type="button" class="button" value="1" onclick="add(1)">
+        <input type="button" class="button" value="2" onclick="add(2)">
+        <input type="button" class="button" value="3" onclick="add(3)">
+        <input type="button" class="button" value="+" onclick="add('+')">
+        <br><br>
+        <input type="button" class="button" value="4" onclick="add(4)">
+        <input type="button" class="button" value="5" onclick="add(5)">
+        <input type="button" class="button" value="6" onclick="add(6)">
+        <input type="button" class="button" value="-" onclick="add('-')">
+        <br><br>
+        <input type="button" class="button" value="7" onclick="add(7)">
+        <input type="button" class="button" value="8" onclick="add(8)">
+        <input type="button" class="button" value="9" onclick="add(9)">
+        <input type="button" class="button" value="x" onclick="add('*')">
+        <br><br>
+        <input type="reset" class="button" value="C">
+        <input type="button" class="button" value="0" onclick="add('0')">
+        <input type="button" class="button" value="=" onclick="result()">
+        <input type="button" class="button" value="/" onclick="add('/')">
+    </fieldset>
+</form>
+<script>
+    let flag = false;
+    function add(num) {
+        if (flag && num != "/" && num != "*" && num != "+" && num != "-"){
+            document.getElementById('display1').value = "";
+        }
+        document.getElementById('display1').value += num;
+        flag=false;
+    }
+
+    function result() {
+        let equal = eval(cal.display.value);
+        /*  document.cal.display.value = equal ;*/
+        document.getElementById('display1').value = equal
+        flag=true;
+    }
+</script>
+</body>
+</html>

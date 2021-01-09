@@ -1,0 +1,113 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Do You Love Me</title>
+</head>
+<body>
+<button onclick="baiTap1()">Bài 1</button>
+<button onclick="baiTap2()">Bài 2</button>
+<button onclick="baiTap3()">Bài 3</button>
+<button onclick="baiTap4()">Bài 4</button>
+<button onclick="baiTap5()">Bài 5</button>
+<button onclick="baiTap6()">Bài 6</button>
+<button onclick="baiTap7()">Bài 7</button>
+</body>
+<script>
+    function baiTap1() {
+        let a = prompt("Nhập vào số A");
+        let b = prompt("Nhập vào số B")
+        if (a % b == 0){
+            alert("A chia hết cho B")
+        } else {
+            alert("A không chia hết cho B")
+        }
+    }
+
+
+    function baiTap2() {
+        let age = prompt("Nhập vào số tuổi :")
+        if (age < 15){
+            alert("Chưa đủ tuổi vào lớp 10")
+        } else {
+            alert("Đủ tuổi vào lớp 10")
+        }
+    }
+
+
+    function baiTap3() {
+        let number = prompt("Hãy nhập vào 1 số :")
+        if (number > 0){
+            alert("Số bạn vừa nhập lớn hơn 0")
+        } else if (number < 0) {
+            alert("Số bạn vừa nhập nhỏ hơn 0")
+        } else {
+            alert("Bạn vừa nhập số 0")
+        }
+    }
+
+    function baiTap4() {
+        let number1 = prompt("Hãy nhập vào số nguyên A")
+        let number2 = prompt("Hãy nhập vào số nguyên B")
+        let number3 = prompt("Hãy nhập vào số nguyên C")
+        if(number1 > number2 && number1 > number3){
+            alert("A là số lớn nhất")
+        } else if (number2 > number3) {
+            alert("B là số lớn nhất")
+        } else {
+            alert("C là số lớn nhất")
+        }
+    }
+
+    function baiTap5() {
+        let number1 = prompt("Hãy nhập điểm kiểm tra")
+        let number2 = prompt("Hãy nhập điểm thi giữa kỳ")
+        let number3 = prompt("Hãy nhập điểm thi cuối kỳ")
+        let result = (parseInt(number1) + (parseInt(number2)*2) + (parseInt(number3)*3))/6
+        if (number1 >10 || number2 >10 || number3 > 10)
+        {
+            alert("Số điểm không hợp lệ")
+        }
+        else if (result >= 8.5){
+            alert("Loại Giỏi")
+        } else if (result >= 6.5){
+            alert("Loại khá")
+        } else if (result >= 5) {
+            alert("Loại Trung bình")
+        } else {
+            alert("Loại yếu")
+        }
+    }
+
+    function baiTap6() {
+        let revenue = prompt("Hãy nhập vào doanh thu của bạn");
+        let commis = 0;
+        if (revenue > 100){
+            commis = revenue*20/100
+        } else if (revenue > 80){
+            commis = revenue*15/100
+        } else if (revenue > 50){
+            commis = revenue*10/100
+        } else{
+        }
+        alert("Hoa hồng của bạn là " + commis);
+    }
+
+    function baiTap7() {
+        let minutes = prompt("Nhập số phút bạn muốn gọi")
+        let pay = 0;
+        if (minutes <= 0) {
+            alert("Xin hãy nhập lại")
+        } else if (minutes > 15){
+            pay = minutes * 2000 ;
+        } else if (minutes >= 10){
+            pay = minutes * 2500 ;
+        } else if (minutes >= 5){
+            pay = minutes * 3000 ;
+        } else {
+            pay = minutes * 3500;
+        }
+        alert("Số tiền bạn phải trả là " + pay)
+    }
+</script>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    p{
+        font-weight: bolder;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="baiTap01()">Bài 1</button>
+<button type="button" onclick="baiTap02()">Bài 2</button>
+<button type="button" onclick="baiTap03()">Bài 3 + 4</button>
+<button type="button" onclick="baiTap05()">Bài 5</button>
+<button type="button" onclick="baiTap06()">Bài 6</button>
+<button type="button" onclick="baiTap07()">Bài 7</button>
+<button type="button" onclick="baiTap08()">Bài 8</button>
+<button type="button" onclick="baiTap09()">Bài 9</button>
+<button type="button" onclick="baiTap10()">Bài 10</button>
+<button type="button" onclick="baiTap11()">Bài 11</button>
+<button type="button" onclick="baiTap12()">Bài 12</button>
+<script>
+    function baiTap01() {
+        let cel = prompt("Hãy nhập vào độ C");
+        let fah = 9/5 * cel +32;
+        alert("Độ F của bạn là: " + fah)
+    }
+
+    function baiTap02() {
+        let met = prompt("Hãy nhập vào số mét");
+        let ft = met * 3.2800;
+        if (met >0) {
+            alert("Số feet của bạn là " + ft);
+        } else {
+            alert("Hãy nhập đúng số");
+        }
+    }
+
+    function baiTap03() {
+        let a = prompt("Hãy nhập vào cạnh a");
+        let b = prompt("Hãy nhập vào cạnh b");
+        if (a > 0 && b > 0) {
+            if (a == b) {
+                alert("Diện tích của hình vuông là " + a * b);
+            } else if (a != b) {
+                alert("Diện tích hình chữ nhật là " + a * b)
+            }
+        }  else {
+            alert("Hãy nhập đúng số !")
+        }
+    }
+
+    function baiTap05() {
+        let a = prompt("Hãy nhập vào cạnh a");
+        let b = prompt("Hãy nhập vào cạnh b");
+        let c = (a*b)/2;
+        if (a > 0 && b >0){
+            alert("Diện tích của tam giác vuông là: " + c);
+        }
+        else {
+            alert("Hãy nhập đúng số cạnh");
+        }
+    }
+
+    function baiTap06() {
+        let a = prompt("Nhập vào số a");
+        let b = prompt("Hãy nhập vào số b");
+        let x = -b/a;
+        if (a != 0) {
+            alert("Giá trị của x là " + x);
+        } else if (a == 0 && b == 0 ) {
+            alert("x có vô số nghiệm");
+        } else {
+            alert ("Phương trình vô nghiệm")
+        }
+    }
+
+    function baiTap07() {
+        let a = prompt("Hãy nhập vào số a");
+        let b = prompt("Hãy nhập vào số b");
+        let c = prompt("Hãy nhập vào số c");
+        let delta = b*b - 4 * a * c;
+        if (delta > 0){
+            let x1 = (-b - Math.sqrt(delta))/(2*a);
+            let x2 = (b - Math.sqrt(delta))/(2*a);
+            alert("Phương trình có 2 nghiệm " + "x1 = " + x1 + " x2 = " + x2);
+        } else if (delta == 0) {
+            let x3 = (-b / (2*a))
+            alert("Phương trình có nghiệm kép là: x1 = x2 =  " + x3)
+        } else {
+            alert("Phương trình vô nghiệm")
+        }
+    }
+
+    function baiTap08() {
+        let age = parseInt(prompt("Hãy nhập số tuổi"));
+        if (age.value = Number.isInteger(age) && age > 0 && age < 120){
+            alert("Số tuổi là " + age)
+        } else{
+            alert("Hãy nhập đúng số tuổi")
+        }
+    }
+
+    function baiTap09() {
+        let a = prompt("Hãy nhập vào a");
+        let b = prompt("Hãy nhập vào b");
+        let c = prompt("Hãy nhập vào c");
+        if (a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a){
+            alert("Đây là 3 cạnh của 1 tam giác")
+        } else {
+            alert("Đây không phải là 3 cạnh của 1 tam giác")
+        }
+    }
+
+    function baiTap10() {
+        let electronic = prompt("Nhập vào số điện tiêu thụ")
+        let level1 = 1678
+        let level2 = 1734
+        let level3 = 2014
+        let level4 = 2536
+        let level5 = 2834
+        let level6 = 2927
+        let moneyToPay;
+        if (electronic >0){
+            if (electronic > 401){
+                moneyToPay = electronic*((level6+level5+level4+level3+level2+level1)/6);
+            } else if (electronic >= 301){
+                moneyToPay = electronic*((level5+level4+level3+level2+level1)/5);
+            } else if (electronic >= 201){
+                moneyToPay = electronic*((level4+level3+level2+level1)/4);
+            } else if (electronic >= 101){
+                moneyToPay = electronic*((level3+level2+level1)/3);
+            } else if (electronic >= 51){
+                moneyToPay = electronic*((level2+level1)/2);
+            } else {
+                moneyToPay = electronic*level1;
+            } alert("Số tiền phải trả " + moneyToPay.toFixed(0) + " VNĐ")
+        } else {
+            alert("Số tiền không hợp lệ")}
+    }
+
+    function baiTap11() {
+        let money = prompt("Thu nhập của bạn")
+        let tax;
+        if (money > 0) {
+            if (money > 2000) {
+                tax = (money - 2000) * 25 / 100 + 250;
+            } else if (money >= 1500) {
+                tax = (money - 1500) * 20 / 100 + 200;
+            } else if (money >= 1000) {
+                tax = (money - 1000) * 15 / 100 + 150;
+            } else if (money >= 500) {
+                tax = (money - 500) * 10 / 100 + 100;
+            } else {
+                tax = money*5/100
+            } alert("Số thuế phải đóng là " + tax)
+        } else {
+            alert("Số tiền không hợp lệ")
+        }
+    }
+
+    function baiTap12() {
+        let money = prompt("Nhập số tiền bạn muốn gửi")
+        let month = prompt("Nhập số tháng bạn muốn gửi")
+        switch (month) {
+            case '1':
+            case '2':
+            case '3':
+                alert("Số tiền của bạn là " + money * Math.pow((1+1/10),month));
+                break;
+            case '4':
+            case '5':
+            case '6':
+                alert("Số tiền của bạn là " + money * Math.pow((1+1.5/10),month));
+                break;
+            case '7':
+            case '8':
+            case '9':
+                alert("Số tiền của bạn là " + money * Math.pow((1+2/10),month));
+                break;
+            case '10':
+            case '11':
+            case '12':
+                alert("Số tiền của bạn là " + money * Math.pow((1+2.5/10),month));
+                break;
+            default:
+                alert("Số tiền của bạn là " + money * Math.pow((1+3/10),month));
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
