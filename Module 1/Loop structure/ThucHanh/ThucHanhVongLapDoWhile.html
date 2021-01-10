@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let value;
+    do{
+        value = prompt("Hãy nhập vào 1 số từ 1-10");
+        if (value <1 || value > 10){
+            alert("Nhập lại")
+        }
+    } while (value < 1 || value > 10)
+
+    document.write("Số bạn vừa nhập là " + value);
+</script>
+</body>
+</html>

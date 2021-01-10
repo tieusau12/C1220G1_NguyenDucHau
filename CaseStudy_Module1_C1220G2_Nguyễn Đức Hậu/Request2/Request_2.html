@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request 2</title>
+</head>
+<body>
+<script>
+    let name = "Nguyễn Đức Hậu";
+    let idCard = "201732081";
+    let birthday = "02/04/1997";
+    let email = "tieusau12@gmail.com";
+    let address = "Đà Nẵng";
+    let service = "Villa";
+    let room = "Vip";
+    let customer = "Dianmond";
+    let discount = 10;
+    let rentday = 5;
+    let quantity = 2;
+    let show = parseInt(prompt("1.Hiển thị thông tin khách hàng"+"\n"+
+        "2.Chỉnh sửa thông tin khách hàng"+"\n"+
+        "3.Hiện giá phải trả"));
+    if (show > 0 && show <=3) {
+        if (show === 1) {
+            alert("Họ và tên: " + name + "\n" +
+                "CMND: " + idCard + "\n" +
+                "Ngày sinh: " + birthday + "\n" +
+                "Email: " + email + "\n" +
+                "Địa chỉ: " + address + "\n" +
+                "Loại dịch vụ: " + service + "\n" +
+                "Loại phòng: " + room + "\n" +
+                "Cấp độ: " + customer + "\n" +
+                "Giảm giá: " + discount + "\n" +
+                "Số người di cùng: " + quantity + "\n" +
+                "Số ngày thuê: " + rentday);
+        } else if (show === 2) {
+            let edit = parseInt(prompt(("1.Họ và tên: " + name + "\n" +
+                "2.CMND: " + idCard + "\n" +
+                "3.Ngày sinh: " + birthday + "\n" +
+                "4.Email: " + email + "\n" +
+                "5.Địa chỉ: " + address + "\n" +
+                "6.Loại dịch vụ: " + service + "\n" +
+                "7.Loại phòng: " + room + "\n" +
+                "8.Cấp độ: " + customer + "\n" +
+                "9.Giảm giá: " + discount + "\n" +
+                "10.Số người di cùng: " + quantity + "\n" +
+                "11.Số ngày thuê: " + rentday)));
+            switch (edit) {
+                case 1: {
+                    name = prompt("Nhập lại họ và tên");
+                    break;
+                }
+                case 2: {
+                    idCard = prompt("Nhập lại CMND");
+                    break;
+                }
+                case 3: {
+                    birthday = prompt("Nhập lại ngày sinh");
+                    break;
+                }
+                case 4: {
+                    email = prompt("Nhập lại Email");
+                    break;
+                }
+                case 5: {
+                    address = prompt("Nhập lại Địa chỉ");
+                    break;
+                }
+                case 6: {
+                    service = prompt("Nhập lại Loại dịch vụ");
+                    break;
+                }
+                case 7: {
+                    room = prompt("Nhập lại loại phòng");
+                    break;
+                }
+                case 8: {
+                    customer = prompt("Nhập lại cấp độ");
+                    break;
+                }
+                case 10: {
+                    quantity = prompt("Nhập lại số người đi cùng");
+                    break;
+                }
+                case 11: {
+                    rentday = prompt("Nhập lại số ngày thuê");
+                    break;
+                } default:{
+                    alert("Failed")
+                }
+            }   alert("Họ và tên: " + name + "\n" +
+                "CMND: " + idCard + "\n" +
+                "Ngày sinh: " + birthday + "\n" +
+                "Email: " + email + "\n" +
+                "Địa chỉ: " + address + "\n" +
+                "Loại dịch vụ: " + service + "\n" +
+                "Loại phòng: " + room + "\n" +
+                "Cấp độ: " + customer + "\n" +
+                "Giảm giá: " + discount + "\n" +
+                "Số người di cùng: " + quantity + "\n" +
+                "Số ngày thuê: " + rentday);
+        } else if (show === 3){
+            let money = 0;
+            if(service === "Villa"){
+                money = 500;
+            } else if (service === "House"){
+                money = 300;
+            } else if (service === "Room"){
+                money = 100;
+            }
+            let city = 0;
+            if(address === "Đà Nẵng"){
+                city = 20;
+            } else if (address === "Huế"){
+                city = 10;
+            } else if (address === "Quảng Nam"){
+                city = 5;
+            }
+            let day = 0;
+            if (rentday > 7){
+                day = 30;
+            }else if (rentday>5){
+                day = 20;
+            } else if (rentday>2){
+                day = 10;
+            } alert("Tiền phải trả: "+(money*rentday-city-day))
+        } else {
+            alert("Lựa chọn không hợp lệ");
+        }
+    }
+
+</script>
+</body>
+</html>
