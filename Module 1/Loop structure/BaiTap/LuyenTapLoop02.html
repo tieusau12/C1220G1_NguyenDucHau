@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    .margin{
+        margin: auto;
+    }
+</style>
+<button type="button" onclick="baiTap1()">Bài tập 1</button>
+<button type="button" onclick="baiTap2()">Bài tập 2</button>
+<button type="button" onclick="baiTap3()">Bài tập 3&4</button>
+<button type="button" onclick="baiTap5()">Bài tập 5</button>
+<button type="button" onclick="baiTap6()">Bài tập 6</button>
+
+
+
+<script>
+    function baiTap1() {
+        let numLoop = prompt("Hãy nhập số lượng Fibonanci bạn muốn in ra")
+        let i = 2;
+        let num1 = 0;
+        let num2 = 1;
+        let sum;
+        document.write(num1+"<br>");
+        document.write(num2+"<br>");
+        while(i < numLoop){
+            sum = num1 + num2;
+            num1 = num2;
+            num2 = sum;
+            document.write(sum + '<br>');
+            i++
+        }
+    }
+
+    function baiTap2() {
+        let number = prompt("Hãy nhập vào 1 số")
+        let multi;
+        let num1 = 1;
+        let num2 = 1;
+        while(num1<=number){
+            multi = num1 * num2;
+            num1++
+            num2 = multi
+        } document.write(multi)
+    }
+
+    function baiTap3() {
+        let i;
+        let j;
+        let z;
+        for (i = 1; i <= 5; i++) {
+            for (j = 1; j <= i; j++) {
+                document.write("*")
+            }
+            document.write("<br>");
+        }
+        document.write("<br>")
+
+        for (i = 5; i >= 1; i--) {
+            for (j = i; j >= 1; j--) {
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+        document.write("<br>")
+
+        for (i = 1; i <= 5; i++) {
+            for (z = 5; z >= i; z--) {
+                document.write("&nbsp&nbsp")
+            }
+            for (j = 1; j <= i; j++) {
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+        document.write("<br>")
+
+        for (i = 1; i <= 5; i++) {
+            for (j = 1; j <= i; j++) {
+                document.write("&nbsp&nbsp")
+            }
+            for (z = 5; z >= i; z--) {
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+        for (i = 0; i < 7; i++) {
+            for (j = 0; j <= 20; j++) {
+                if (j == 0 || j == 20 || i == 0 || i == 6) {
+                    document.write("*")
+                } else {
+                    document.write("&nbsp&nbsp")
+                }
+            }
+            document.write("<br>")
+        }
+    }
+
+
+    function baiTap5() {
+        let money = prompt("Hãy nhập vào số tiền muốn gửi");
+        let month = prompt("Số tháng cho vay");
+        let loop;
+        let commis;
+        let a = (1+7/100);
+        let b = 1;
+        for(loop = 1;loop<=month;loop++){
+            commis = a * b
+            b = commis;
+        }  document.write(money*b);
+    }
+
+    function baiTap6() {
+        let doc;
+        let ngang;
+        for(ngang=1;ngang<=6;ngang++) {
+            for (doc = 1; doc <= 7; doc++) {
+                switch (true) {
+                    case (ngang == 1 && doc == 1):
+                    case (ngang == 1 && doc == 4):
+                    case (ngang == 1 && doc == 7):
+                    case (ngang == 4 && doc == 1):
+                    case (ngang == 4 && doc == 7):
+                    case (ngang == 5 && doc == 1):
+                    case (ngang == 5 && doc == 2):
+                    case (ngang == 5 && doc == 6):
+                    case (ngang == 5 && doc == 7):
+                    case (ngang == 6 && doc == 1):
+                    case (ngang == 6 && doc == 2):
+                    case (ngang == 6 && doc == 3):
+                    case (ngang == 6 && doc == 5):
+                    case (ngang == 6 && doc == 6):
+                    case (ngang == 6 && doc == 7):
+                        document.write("_")
+                        break;
+                    default:
+                        document.write("*")
+                }
+            }
+            document.write("<br>")}
+    }
+
+</script>
+</body>
+</html>

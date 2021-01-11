@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Luyện Vòng Lặp</title>
+</head>
+<body>
+<button type="button" onclick="baiTap1()">Bài tập 1</button>
+<button type="button" onclick="baiTap2()">Bài tập 2</button>
+<button type="button" onclick="baiTap3()">Bài tập 3</button>
+<button type="button" onclick="baiTap4()">Bài tập 4</button>
+<button type="button" onclick="baiTap5()">Bài tập 5</button>
+<button type="button" onclick="baiTap6()">Bài tập 6</button>
+<button type="button" onclick="baiTap7()">Bài tập 7</button>
+<button type="button" onclick="baiTap8()">Bài tập 8</button>
+<script>
+    function baiTap1() {
+        let i;
+        for (i=1;i<=100;i++){
+            document.write(i);
+            if (i == 99){
+                alert("Hoàn Thành");
+                break;
+            }
+        }
+    }
+
+
+    function baiTap2() {
+        let celcius = prompt("Hãy nhập vào nhiệt độ")
+        while (celcius>100 || celcius <20){
+            if (celcius > 100){
+                celcius= prompt("Hãy giảm nhiệt độ")
+            } else if (celcius<20){
+                celcius = prompt("Hãy tăng nhiệt độ")
+            } else {
+                alert("Nhiệt độ phù hợp")
+            }
+        }
+    }
+
+
+    function baiTap3() {
+        let num;
+        let num1 = 0;
+        let num2 = 1;
+        let sum;
+        document.write(num1 + "<br>")
+        document.write(num2 + "<br>")
+        for (num = 1; num < 19; num++) {
+            sum = num1 + num2;
+            document.write(sum + "<br>");
+            num1 = num2
+            num2 = sum
+        }
+    }
+
+
+    function baiTap4() {
+        let i = 0
+        let j = 1
+        let f;
+        while (f % 5 != 0){
+            f = i + j;
+            i = j;
+            j = f;
+        } document.write(f + "<br>")
+    }
+
+    function baiTap5() {
+        let num;
+        let num1 = 0;
+        let num2 = 1;
+        let sum;
+        let sumPlus = 1;
+        for(num = 3 ; num <= 20 ; num++){
+            sum = num1 + num2;
+            num1 = num2;
+            num2 = sum;
+            sumPlus += sum;
+        } document.write(sumPlus);
+    }
+
+    function baiTap6() {
+        let round;
+        let num;
+        let num2 = 0;
+        let sum;
+        for (num = 7,round = 1;round <= 30; round++ , num += 7 ){
+            sum = num2 + num;
+            num2 = sum
+        } document.write(sum)
+    }
+
+
+    function baiTap7() {
+        let number;
+        for (number = 1 ; number < 101 ; number++){
+            if (number % 3 == 0){
+                if (number % 5 == 0){
+                    document.write("FizzBuzz" + "<br>");
+                    continue;
+                }
+                document.write("Fizz" + "<br>");
+                continue;
+            }
+            else if (number % 5 ==0){
+                document.write("Buzz" + "<br>");
+                continue;
+            }
+            document.write(number + "<br>")
+        }
+    }
+
+    function baiTap8() {
+        let num1 = parseInt(prompt("Hãy nhập vào số bắt đầu"));
+        let num2 = parseInt(prompt("Hãy nhập vào số kết thúc"));
+        let i;
+        while (num1 > num2){
+            num1 = parseInt(prompt("Nhập lại số bắt đầu"));
+            num2 = parseInt(prompt("Nhập lại số kết thúc"));
+        }
+        let numRandom = Math.floor((Math.random()*(num2-num1))+num1);
+        alert(numRandom)
+        for(i=0;i<3;i++){
+            let numResult = prompt("Hãy nhập số dự đoán");
+            if (numRandom == numResult) {
+                alert("Chúc mừng");
+                break;
+            }
+        } if (i == 3){
+            alert("Game Over")
+        }
+    }
+</script>
+</body>
+</html>
