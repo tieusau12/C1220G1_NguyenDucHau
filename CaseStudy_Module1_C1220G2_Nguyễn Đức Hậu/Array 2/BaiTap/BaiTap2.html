@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+<input type="text" id="english">
+<input type="button" value="Dịch" onclick="transLate()">
+<p id = "result"></p>
+<script>
+    let vietNam = ["Ăn" , "Uống" , "Thể Thao" , "Học Sinh" , "Phim" , "Trò chơi"];
+    let engLish = ["eat" , "drink" , "sport" , "student", "movie" , "game"];
+    function transLate() {
+        let search = document.getElementById("english").value;
+        for (let i = 0 ; i < engLish.length ; i++){
+            if (search === engLish[i]){
+                document.getElementById("result").innerHTML = "Tiếng Việt là: "  + vietNam[i]
+            }
+        }
+    }
+</script>
+</body>
+</html>

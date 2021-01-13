@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<input type="button" onclick="baitap1()" value="Bài Tập 1">
+<input type="button" onclick="baitap2()" value="Bài Tập 2">
+<input type="button" onclick="baitap3()" value="Bài Tập 3">
+<script>
+    function baitap1() {
+        let color = ["Red","Green","Blue","Gray"];
+        document.write(color.join());
+    }
+
+    function baitap2() {
+        let number = [0,1,2,7,5,4,6,9,8];
+        let number1 = [number[0]];
+        for(let i = 1 ; i <= number.length ; i++){
+            if (number[i] % 2 == 0 && number[i-1] % 2 == 0){
+                number1.push("-",number[i])
+            } else {
+                number1.push(number[i])
+            }
+        }
+        document.write(number1.join(""))
+    }
+
+    function baitap3() {
+        let name = prompt("Hãy nhập tên của bạn");
+        let up = "QWERTYUIOPASDFGHJKLZXCVBNM";
+        let down = "qwertyuiopasdfghjklzxcvbnm";
+        let array = []
+        for (let i = 0 ; i < name.length ; i++){
+            if (up.indexOf(name[i]) !== - 1){
+                array.push(name[i].toLowerCase());
+            } else if (down.indexOf(name[i]) !== 1){
+                array.push(name[i].toUpperCase());
+            } else {
+                array.push(name[i]);
+            }
+        } document.write(array.join(""));
+    }
+</script>
+</body>
+</html>

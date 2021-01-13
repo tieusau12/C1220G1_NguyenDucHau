@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập</title>
+</head>
+<body>
+<input type="button" onclick="bai1()" value="Bài Tập 1">
+<input type="button" onclick="bai2()" value="Bài Tập 2">
+<input type="button" onclick="bai3()" value="Bài Tập 3">
+<input type="button" onclick="bai4()" value="Bài Tập 4">
+<input type="button" onclick="bai5()" value="Bài Tập 5">
+<input type="button" onclick="bai6()" value="Bài Tập 6">
+<input type="button" onclick="bai7()" value="Bài Tập 7">
+<input type="button" onclick="bai8()" value="Bài Tập 8">
+<input type="button" onclick="bai9()" value="Bài Tập 9">
+
+
+<script>
+    function bai1() {
+        let array = [];
+        let count = 0;
+        for (let i = 1; i < 11; i++) {
+            let number = prompt("Nhập vào số thứ " + i);
+            array.push(number);
+        }
+
+        for (let j = 0; j < array.length; j++) {
+            if (array[j] >= 10) {
+                count++
+            }
+        }
+        document.write("Có " + count + " số lớn hơn 10 trong 10 số bạn vừa nhập")
+    }
+
+    function bai2() {
+        let array = [];
+        for (let i = 0; i < 10; i++) {
+            let number = prompt("Nhập vào 10 số")
+            array.push(number);
+
+        }
+        let number = array[0];
+        let count = 0;
+        for (let j = 0; j < array.length; j++) {
+            if (number - array[j] < 0) {
+                number = array[j];
+                count = j;
+            }
+        }
+        alert("Số lớn nhất là " + number + " ở index số " + count);
+    }
+
+    function bai3() {
+        let numberArray = parseInt(prompt("Hãy nhập số mảng bạn muốn"));
+        let round = 1;
+        let array = [];
+        let sum = 0;
+        while (round <= numberArray) {
+            let number = prompt("Hãy nhập giá trị cho mảng" + round + "/" + numberArray)
+            array.push(number);
+            sum += parseInt(number);
+            round++
+        }
+        array.sort(function (a, b) {
+            return b - a
+        });
+        document.write("Số lớn nhất trong mảng là " + array[0] + "<br>")
+        document.write("Trung bình cộng các phần tử trong mảng " + sum / numberArray)
+    }
+
+    function bai4() {
+        let inputNumber = parseInt(prompt("Hãy nhập số lượng số nguyên bạn muốn"));
+        let i = 1;
+        let array = [];
+        while (i <= inputNumber) {
+            let number = prompt("Nhập số nguyên thứ" + i + "/" + inputNumber)
+            array.push(number);
+            i++
+        }
+        alert(array.reverse());
+    }
+
+    function bai5() {
+        let inputNumber = parseInt(prompt("Hãy nhập vào số lượng số nguyên bạn muốn"));
+        let i = 1;
+        let array = [];
+        while (i <= inputNumber) {
+            let number = parseInt(prompt("Nhập vào các số nguyên âm và nguyên dương"));
+            array.push(number);
+            i++
+        }
+        let count = 0;
+        for (let j = 0; j < array.length; j++) {
+            if (array[j] < 0) {
+                count++
+            }
+        }
+        alert("Tổng số nguyên âm trong mảng là " + count + " số")
+    }
+
+    function bai6() {
+        let array1 = [];
+        for (let i = 1; i <= 10; i++) {
+            let inputNumber = parseInt(prompt("Hãy nhập vào số nguyên thứ " + i));
+            array1.push(inputNumber);
+        }
+        let number2 = parseInt(prompt("Hãy nhập vào số cần so sánh"));
+        let j;
+        for (j = 0; j < array1.length; j++) {
+            if (array1[j] === number2) {
+                alert("Phần tử có trong mảng 1");
+                break;
+            }
+        }
+        if (j === 10) {
+            alert("Phần tử không có trong mảng 1")
+        }
+    }
+
+    function bai7() {
+        let array = [];
+        let flag = false;
+        for (let i = 1; i <= 4; i++) {
+            let inputNumber = parseInt(prompt("Hãy nhập vào số nguyên thứ " + i));
+            array.push(inputNumber);
+        }
+        let number = parseInt(prompt("Hãy nhập vào 1 số"));
+        let number2 = 0;
+        for (let j = 0; j < array.length - 1; j++) {
+            console.log("a");
+            if (array[j] === number) {
+                number2 = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = number2;
+                flag = true;
+            }
+        }
+        if (flag) {
+            array[array.length-1] = 0;
+            alert(array);
+
+        }else {
+            alert("number không có trong mảng");
+        }
+    }
+
+    function bai8() {
+        let array = [];
+        for(let i = 1 ; i <= 10 ; i++){
+            let number = prompt("Hãy nhập vào 10 số");
+            array.push(number)
+        } alert(array.sort(function (a,b) {
+            return b-a;
+        }))
+    }
+
+    function bai9() {
+        let array1 = [];
+        let array2 = [];
+        for(let i = 0 ; i < 10; i++){
+            let number1 = prompt("Hãy nhập 10 số mảng 1");
+            array1.push(number1)
+        }
+        for(let j = 0 ; j < 10 ; j++){
+            let number2 = prompt("Hãy nhập vào 10 số mảng 2")
+            array2.push(number2)
+        }
+        let array3 = array1.concat(array2);
+        alert(array3);
+    }
+</script>
+</body>
+</html>
