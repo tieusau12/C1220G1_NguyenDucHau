@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <script>
+     // tính nhâp vào 1 chuỗi và lấy toàn bộ các ký tự không phải là khoảng trắng
+     let str1 = prompt(" nhập vào 1 chuỗi");
+     str1 = str1.trim(); // cắt khoảng trắng 2 đầu
+     let result="";
+     for (let i =0; i< str1.length;i++){
+         if (str1.charAt(i)===" "&&str1.charAt(i+1)===" "){
+             continue;
+         }
+         result+=str1.charAt(i);
+     }
+     alert("kết Quả:  " + result);
+
+
+// nhập vào 1 chuỗi yêu cầu là chuỗi và có 4 ký tự
+     let check;
+     let check1;
+     let str;
+     do {
+        check1= false;
+        check=false;
+         str =prompt("nhập vào tên (yêu cầu là 4 ký tự và là chữ)");
+        check =str.length!==4;
+        let char='';
+         for (let i=0; i<str.length;i++){
+             char=str.charAt(i);
+             if (!isNaN(char)){
+                 check1=true;
+                 break;
+             }
+         }
+
+     }while (check||check1);
+    alert(" chuỗi nhập đúng: "+ str);
+
+
+// case Study phần tính giảm giá
+     let giamGia=0;
+      // theo đieạ chỉ;
+     let diaChi=prompt("nhập địa chỉ");
+     if (diaChi=="DN"){
+         giamGia +=10;
+     }else if (diaChi="QN"){
+         giamGia +=5
+     }
+     let tuoi = prompt("nhập tuổi")
+     if (tuoi<6){
+         giamGia +=5;
+     }else if (tuoi<15){
+         giamGia +=3
+     }else {
+         giamGia +=1;
+     }
+
+
+ </script>
+</body>
+</html>

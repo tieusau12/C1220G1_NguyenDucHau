@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // nhập số lượng phần tử của mảng (điều kiện là số nguyên >0 và <=20
+    let check=false;
+    let num;
+    do {
+        num = prompt("nhập vào số phần tủ của mảng");
+        check= (!isNaN(num)&& num==parseInt(num)&&num>0&&num<=20);
+        num = parseInt(num);
+    }while (!check);
+// khai báo mảng có num phần tử
+    let arrayNum = new Array(num);
+    // nhập giá trị cho mảng
+    for (let i=0; i<arrayNum.length;i++){
+        arrayNum[i] = parseInt(prompt("nhập vào phần tử thứ " +i));
+    }
+     alert(" mảng sau khi nhập "+ arrayNum);
+
+    // tính số lượng phần tử chẵn trong mảng
+     let count =0;
+    for (let i=0; i<arrayNum.length;i++){
+       if (arrayNum[i]%2==0){
+           count++;
+       }
+    }
+    alert(" số phần tử chẵn : " + count);
+
+    // tìm giá trị lớn nhất trong mảng;
+    let max = arrayNum[0];
+    for (let n of arrayNum){
+        if (max<n){
+            max=n;
+        }
+    }
+    alert("giá trị lớn nhất :" + max);
+
+// in ra các số nguyên tố có trong mảng
+    let result="";
+
+    for (let i=0; i<arrayNum.length;i++){
+        if (arrayNum[i]<2){
+            continue;
+        }
+        let check= true;
+       for (let j=2; j<=Math.sqrt(arrayNum[i]);j++){
+           if (arrayNum[i]%j==0){
+               check=false;
+               break;
+           }
+       }
+       if (check){
+           result += arrayNum[i] + ", ";
+       }
+    }
+     alert(" dãy số nguyên tố có trong mảng" + result);
+
+</script>
+</body>
+</html>

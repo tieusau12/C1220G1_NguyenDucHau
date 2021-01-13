@@ -27,14 +27,14 @@
 
 
     function baiTap2() {
-        let celcius = prompt("Hãy nhập vào nhiệt độ")
+        let celcius = prompt("Hãy nhập vào nhiệt độ");
         while (celcius>100 || celcius <20){
             if (celcius > 100){
-                celcius= prompt("Hãy giảm nhiệt độ")
+                celcius= prompt("Hãy giảm nhiệt độ");
             } else if (celcius<20){
-                celcius = prompt("Hãy tăng nhiệt độ")
+                celcius = prompt("Hãy tăng nhiệt độ");
             } else {
-                alert("Nhiệt độ phù hợp")
+                document.write("Nhiệt độ phù hợp");
             }
         }
     }
@@ -45,26 +45,26 @@
         let num1 = 0;
         let num2 = 1;
         let sum;
-        document.write(num1 + "<br>")
-        document.write(num2 + "<br>")
+        document.write(num1 + "<br>");
+        document.write(num2 + "<br>");
         for (num = 1; num < 19; num++) {
             sum = num1 + num2;
             document.write(sum + "<br>");
-            num1 = num2
-            num2 = sum
+            num1 = num2;
+            num2 = sum;
         }
     }
 
 
     function baiTap4() {
-        let i = 0
-        let j = 1
+        let i = 0;
+        let j = 1;
         let f;
         while (f % 5 != 0){
             f = i + j;
             i = j;
             j = f;
-        } document.write(f + "<br>")
+        } document.write(f + "<br>");
     }
 
     function baiTap5() {
