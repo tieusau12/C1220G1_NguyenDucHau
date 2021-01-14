@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let array = new Array(3);
+    for (let i =0; i<array.length; i++){
+        array[i]= new Array(3);
+    }
+
+    for (let i =0; i<array.length; i++){
+       for (let j =0; j< array[i].length; j++){
+           array[i][j] = parseInt(prompt(" nhập vào phần tử thứ " + i +","+ j));
+       }
+    }
+
+    for (let i =0; i<array.length; i++){
+        for (let j =0; j< array[i].length; j++){
+            document.write(array[i][j])
+        }
+        document.write("<br>");
+    }
+    // tính tổng các phần tử cột thứ 2;
+    let sum =0;
+    for (let i =0; i<array.length; i++){
+        sum += array[i][2];
+    }
+    // alert(sum);
+    let sum2=0;
+// tính tổng đường chéo phải;
+//     for (let i =0; i<array.length; i++){
+//         for (let j =0; j< array[i].length; j++){
+//            if (i+j==array.length-1){
+//                sum2 += array[i][j];
+//            }
+//         }
+//
+//     }
+    for (let i =0; i<array.length; i++){
+        sum2 += array[i][array.length-1-i];
+
+    }
+    alert(sum2)
+</script>
+</body>
+</html>
