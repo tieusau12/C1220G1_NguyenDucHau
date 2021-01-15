@@ -36,7 +36,7 @@
     function bai2() {
         let array = [];
         for (let i = 0; i < 10; i++) {
-            let number = prompt("Nhập vào 10 số")
+            let number = prompt("Nhập vào số thứ  : " + i )
             array.push(number);
 
         }
@@ -45,7 +45,8 @@
         for (let j = 0; j < array.length; j++) {
             if (number - array[j] < 0) {
                 number = array[j];
-                count = j;
+                // count = j;
+                count=array.indexOf(number);
             }
         }
         alert("Số lớn nhất là " + number + " ở index số " + count);
@@ -114,8 +115,8 @@
             }
         }
         if (j === 10) {
-            alert("Phần tử không có trong mảng 1")
-        }
+        alert("Phần tử không có trong mảng 1")
+    }
     }
 
     function bai7() {
@@ -125,7 +126,7 @@
             let inputNumber = parseInt(prompt("Hãy nhập vào số nguyên thứ " + i));
             array.push(inputNumber);
         }
-        let number = parseInt(prompt("Hãy nhập vào 1 số"));
+        let number = parseInt(prompt("Hãy nhập vào 1 số muốn xóa : "));
         let number2 = 0;
         for (let j = 0; j < array.length - 1; j++) {
             console.log("a");
