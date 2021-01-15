@@ -55,10 +55,16 @@
     // x[0] = 15;
     // x[3] = 77;
     // console.log(x);
-    let a = new Array(12, false, "text");
-    x = 10;
-    if (a[1]) x = 20;
-    else x = 30;
+    //
+    // let a = parseInt(prompt(" nhập : "));
+    // console.log(typeof a);
+    let a= prompt(' Nhạp ');
+    function func1(a){
+        if(a == 2)
+            return 2;
+        return a * func1(a - 1);
+    }
+    alert(func1(a))
 
 </script>
 </body>

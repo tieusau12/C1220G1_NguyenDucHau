@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="bai1()" value="Bài Tập 1">
+<input type="button" onclick="bai2()" value="Bài Tập 2">
+<input type="button" onclick="bai3()" value="Bài Tập 3">
+<input type="button" onclick="bai4()" value="Bài Tập 4">
+<input type="button" onclick="bai5()" value="Bài Tập 5">
+
+<script>
+    function bai1() {
+        alert("Xin chào !");
+    }
+
+    function bai2() {
+        let x = parseInt(prompt('Nhập vào đối số : '));
+        x ++;
+       alert(x);
+    }
+
+    function bai3() {
+        let x= prompt( ' Nhập vào tham số thứ 1 : ');
+        let y= prompt(" Nhập vào tham số thứ 2 : ");
+        let sum= parseInt(x) + parseInt(y);
+        if (parseInt(x) > parseInt(y)){
+            alert(" Tham số thứ nhất " + x + " lớn hơn tham số thứ hai " + y);
+            // alert(" số thứ 1 lớn hơn số thứ 2");
+        }else{
+            alert('Tông 2 tham số : '+ sum);
+        }
+    }
+
+    function bai4() {
+        let  result = 0;
+        alert(result);
+        function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+            return result;
+        }
+        result = addNumbers();
+        alert(result);
+    }
+
+    function bai5() {
+        let star=["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" ,"Regulus"];
+        let constellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major" ,"Leo"];
+        let search = prompt(" Nhập tên ngôi sao : ");
+        let check = true;
+        for (let i =0; i<star.length; i ++){
+            if (search === star[i]){
+                alert(" Chòm sao tương ứng với ngôi sao " + star[i] + " là " + constellation[i]);
+                check = false;
+            }
+        }
+        if (check){
+            alert(" Ngôi sao bạn nhập không tương ứng với chòm sao nào");
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập 2</title>
+</head>
+<body>
+<input type="button" onclick="bai1()" value="Bài Tập 1">
+<input type="button" onclick="bai2()" value="Bài Tập 2">
+<input type="button" onclick="bai3()" value="Bài Tập 3">
+<input type="button" onclick="bai4()" value="Bài Tập 4">
+<input type="button" onclick="bai5()" value="Bài Tập 5">
+<input type="button" onclick="bai6()" value="Bài Tập 6">
+<input type="button" onclick="bai7()" value="Bài Tập 7">
+<input type="button" onclick="bai8()" value="Bài Tập 8">
+<input type="button" onclick="bai9()" value="Bài Tập 9">
+
+
+
+<script>
+    function bai1() {
+        let a = parseInt(prompt(" Nhập vào số : "));
+        a= a* a;
+        alert("Bình phương bằng " + a);
+    }
+
+    function bai2() {
+        let radius = parseInt(prompt('Nhập vào bán kính hình tròn : '));
+        let pi = 3.14;
+        let acreage = pi * radius**2;
+        let perimeter = 2*pi*radius;
+        alert(" Chu vi hình tròn : " + perimeter);
+        alert(" Diện tích hình tròn : " + acreage);
+    }
+    
+    function bai3() {
+        let a = parseInt(prompt(" Nhập vào số a : "));
+        let giaithua = 1;
+        for (let i=1 ; i<= a ; i++){
+            giaithua=giaithua*i;
+        }
+        alert("Giai thừa của số "+ a + " là " + giaithua);
+    }
+
+    function bai4() {
+        let a= prompt(" Nhập vào ký tự : ");
+        if (!isNaN(a)){
+            alert("Ký tự" + a + " vừa nhập là số ");
+        }else {
+            alert("Ký tự "+ a +" vừa nhập không là số");
+        }
+    }
+
+    function bai5() {
+        let numb1= parseInt(prompt(" Nhập số thứ 1 : "));
+        let numb2= parseInt(prompt(" Nhập số thứ 2 : "));
+        let numb3= parseInt(prompt(" Nhập số thứ 3 : "));
+        // let a;
+        // let b;
+        // let c;
+        if ()
+    }
+</script>
+</body>
+</html>
