@@ -43,7 +43,7 @@
     }
 
     function bai4() {
-        let a= prompt(" Nhập vào ký tự : ");
+        let a = prompt(" Nhập vào ký tự : ");
         if (!isNaN(a)){
             alert("Ký tự" + a + " vừa nhập là số ");
         }else {
@@ -52,13 +52,76 @@
     }
 
     function bai5() {
-        let numb1= parseInt(prompt(" Nhập số thứ 1 : "));
-        let numb2= parseInt(prompt(" Nhập số thứ 2 : "));
-        let numb3= parseInt(prompt(" Nhập số thứ 3 : "));
-        // let a;
-        // let b;
-        // let c;
-        if ()
+        function min() {
+            let arrs=[];
+            for (let i = 1; i<=3;i++){
+                arrs[i] = parseInt(prompt(" Nhập số nguyên thứ " + i));
+            }
+            let min =arrs[1]
+            for (let i =1; i<=3;i++){
+                if (min>arrs[i]){
+                    min=arrs[i];
+                }
+            }
+            return min;
+        }
+        alert(min());
+    }
+
+    function bai6() {
+        function checkNumber(num) {
+            num = parseFloat(prompt(""));
+            if (Number.isInteger(num)){
+                return num >= 1;
+            }
+        }
+        alert(checkNumber());
+    }
+
+    function bai7() {
+        function convertNum(num1,num2) {
+            num1=parseFloat(prompt("Nhập số nguyên thứ nhất"));
+            num2=parseFloat(prompt("Nhập số nguyên thứ hai"));
+            let a = num1;
+            num1 = num2;
+            num2 = a;
+            return "Số thứ nhất = " + num1 + " Số thứ 2 = " + num2
+        }
+        alert(convertNum())
+    }
+
+     function bai8() {
+         let input = parseInt(prompt("Số lượng số muốn nhập"));
+         let array = [];
+         for (let i = 0 ; i < input ; i++){
+             let input2 = prompt("Số thứ " + (i+1) + "/" + input)
+             array.push(input2)
+         }
+         alert(array.reverse())
+     }
+
+    function bai9() {
+            let input = prompt(" Nhập số lượng ký tự trong mảng : ");
+            let array = [];
+            for ( let i=0 ; i< input ; i ++){
+                let input2 = prompt(" Số thứ " + (i+1) + "/" + input);
+                array.push(input2);
+            } let input3 = prompt(" Nhập vào 1 ký tự bất kỳ :  ");
+                let count =0;
+                let index ;
+                let dem= true;
+                for( let j =0 ; j <array.length ; j++){
+                    index = array[j].indexOf(input3);
+                    if (index !== -1){
+                        ++count ;
+                        dem = false;
+                    }
+                }
+                if (dem){
+                    alert(-1);
+                } else {
+                    alert(" Số lần xuất hiện là " + count);
+                }
     }
 </script>
 </body>

@@ -6,26 +6,150 @@
 </head>
 <body>
 <script>
-    let regEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/; // copy trên mạng :v chứ chưa có hiểu gì hết
-    let email;
+    // dùng regex ( regular Expression)
+    // let regEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    // let email;
+    // do {
+    //     email = prompt("Nhập vào email của bạn")
+    // } while (!regEmail.test(email));
+    // let regEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    // let regIdCard = /[0-9]{9}/;
+    // let regBirthDay = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{2}$/;
+    // let regRenday = /[0-9]/;
+    // let regAccom = /[0-9]/;
+
+
     let name = prompt("Hãy nhập vào tên của bạn");
     let tempName = "";
-    name = name.trim().toLowerCase();
+    name = name.trim().toLowerCase();         // .trim() xóa khoảng trắng đầu và cuối
     for (let i = 0 ; i<name.length ; i++){
-        if (name.charAt(i)===" " && name.charAt(i+1) === " "){
+        if (name.charAt(i)===" " && name.charAt(i+1) === " "){ //  charAt() trong dùng để tìm một ký tự ở vị trí index chỉ định.
             continue;
         }
         if (i===0 || name.charAt(i-1)=== " "){
-            tempName+=name.charAt(i).toUpperCase();
+            tempName+=name.charAt(i).toUpperCase(); // .toLowerCase ()  : Chuẩn hóa dữ  liệu thành thường hết   .toUpperCase () : in hoa chữ lên
             continue
         }
         tempName+=name.charAt(i)
     }
-    alert(tempName);
-    do {
-        email = prompt("Nhập vào email của bạn")
-    } while (!regEmail.test(email));
+    name=tempName;
 
+    let email;
+    let checkEmail;
+    do {
+        email = prompt("Nhập vào email của bạn");
+        let arrayEmail = Array.from(email);
+        let checkEmail1 = true;
+        let checkEmail2 = true;
+        let checkEmail3 = true;
+        let count = 0;
+        checkEmail = true;
+        let j;
+        let k;
+        for (let i = 0; i < arrayEmail.length; i++) {
+            if ((arrayEmail[i] === "@") && i !== 0) {
+                checkEmail1 = false;
+                j = i + 1;
+                break;
+            }
+        }
+
+        for (j; j < arrayEmail.length - 1; j++) {
+            if (arrayEmail[j] === ".") {
+                count++;
+            }
+            if (count === 1) {
+                checkEmail2 = false;
+                k = j;
+                break;
+            }
+        }
+        if ((arrayEmail.length - k) > 1) {
+            checkEmail3 = false;
+        }
+
+        if (!checkEmail1 && !checkEmail2 && !checkEmail3) {
+            checkEmail = false;
+        } else {
+            alert(" Sai cú pháp !!! Vui lòng nhập lại! Cảm ơn");
+        }
+    } while (checkEmail);
+
+    // Check CMND
+    let check = false;
+    let idCard ="";
+    do {
+        idCard = (prompt("Nhập số idCard: "));
+        let long = idCard.length;
+        check = (!isNaN(idCard) && (idCard == parseInt(idCard)) && (0 <= parseInt(idCard)) && (long === 9));
+        if (!check) {
+            alert("Bạn nhập không đúng ! Vui lòng nhập lại. ")
+        }
+    } while (!check);
+    // Check ngày sinh
+    let birthday;
+    let checkBirthday;
+    do {
+        checkBirthday = true;
+        birthday = prompt("Nhap ngay sinh (DD/MM/YYYY)");
+        let arrayBirthday = Array.from(birthday);
+        if (arrayBirthday.length != 10 || arrayBirthday[2] != "/" || arrayBirthday[5] != "/") {
+            continue;
+        }
+        let day = arrayBirthday[0] + arrayBirthday[1];
+        if ((day == "") || (isNaN(day)) || (parseInt(day) <= 0) || (parseInt(day) > 31)) {
+            continue;
+        }
+        let checkBirthday1 = !Number.isInteger(day * 1);
+        let month = arrayBirthday[3] + arrayBirthday[4];
+        if ((month == "") || (isNaN(month)) || (parseInt(month) <= 0) || (parseInt(month) > 12)) {
+            continue;
+        }
+        let checkBirthday2 = !Number.isInteger(month * 1);
+        let year = arrayBirthday[6] + arrayBirthday[7];
+        if ((year == "") || (isNaN(year)) || (parseInt(year) <= 0)) {
+            continue;
+        }
+        let checkBirthday3 = !Number.isInteger(year * 1);
+        checkBirthday = checkBirthday1 && checkBirthday2 && checkBirthday3;
+    } while (checkBirthday);
+    // Check số ngày thuê
+    let checkRentDay= false;
+    let rentDays;
+    do {
+        rentDays = prompt("Nhập số ngày thuê: ");
+        if (!isNaN(rentDays)){
+            rentDays =Number.parseFloat(rentDays);
+            if (Number.isInteger(rentDays )&& (rentDays >0)){
+                checkRentDay = true;
+            }
+        }
+        if (!checkRentDay){
+            alert(" Số ngày thuê không phải là số nguyên dương !");
+        }
+    } while(!checkRentDay);
+    // Check số người đi kèm
+    let  checkAccompany= false;
+    let accompany;
+    do {
+        accompany = prompt("Nhập số người đi kèm: ");
+        if (!isNaN(accompany)){
+            accompany =Number.parseFloat(accompany);
+            if (Number.isInteger(accompany) && (accompany >0)){
+                checkAccompany = true;
+            }
+        }
+        if (!checkAccompany){
+            alert(" Số ngày thuê không phải là số nguyên dương !");
+        }
+
+    } while (!checkAccompany);
+
+    alert("Name " + name + "\n" +
+        "Email: " + email + "\n" +
+        "idCard: " + idCard + "\n" +
+        "Ngày sinh: " + birthday + "\n" +
+        "Số ngày thuê: " + rentDays + "\n" + "Số người đi kèm: " + accompany);
 
 
 </script>

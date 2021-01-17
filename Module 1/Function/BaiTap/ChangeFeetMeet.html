@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHuyển đổi Feet Và Meters</title>
+</head>
+<body>
+<label>Đổi từ Feet sang Meters</label>
+<input type="number" id="feetToMeet" oninput="feetToMeeter(this.value)" placeholder="Nhập vào feet">
+<p id = "feet"></p>
+<label>Đổi từ mét sang feet</label>
+<input type="number" id="meetToFeet" oninput="meetToFeet(this.value)" placeholder="Nhập vào mét">
+<p id = "meet"></p>
+<script>
+    function feetToMeeter() {
+        let num1 = parseFloat(document.getElementById("feetToMeet").value);
+        let meet = num1 * 0.305;
+        document.getElementById("feet").innerHTML = "Kết quả là " + meet + " mét";
+    }
+
+    function meetToFeet() {
+        let num2 = parseFloat(document.getElementById("meetToFeet").value);
+        let feet = num2 *3.279;
+        document.getElementById("meet").innerHTML = "Kết quả là " + feet + " feet";
+    }
+</script>
+</body>
+</html>
