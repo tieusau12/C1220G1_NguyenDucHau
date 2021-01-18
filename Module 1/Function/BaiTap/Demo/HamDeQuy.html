@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function showMessage() {
+    //     console.log("hello");
+    //     showMessage();
+    // }
+    // showMessage();
+    // //
+    // function kiemTra(str) {
+    //     for (let i =0; i<=str.length/2;i++){
+    //         if (str[i]!==str[str.length-1-i]){
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
+    // let a = prompt("nhâp")
+    // alert(kiemTra(a))
+
+    function kiemTraTuDoiXung(str) {
+        let first = 0;
+        let last = str.length-1;
+        if (first>=last){
+            return true;
+        }else if (str[first]===str[last]){
+            str =str.substring(1,last);
+            alert(str);
+            return kiemTraTuDoiXung(str)
+        }else {
+            return false;
+        }
+
+    }
+    let a = prompt(" nhập chuỗi cần kiểm tra");
+    alert(kiemTraTuDoiXung(a));
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // pass by reference (tham số truyền vào là một đối tượng)
+    // arrayOut là 1 đối tượng =>
+    // khi truyền vào hàm thì tham số arrIn cũng tham chiếu (trỏ đến cùng 1 đối tượng)
+    // khi arrIn thay đổi => làm cho arrOut thay đổi.
+
+
+    // function changeArray(arrIn) {
+    //     arrIn[0]=30;
+    //     arrIn[1]=40;
+    //     console.log("array in function "+ arrIn);
+    // }
+    //
+    // let arrOut = [10,20];
+    // console.log("arrayA: " +arrOut);
+    // changeArray(arrOut);
+    // console.log("arrayA out function after change" +arrOut);
+
+    //
+    //
+    function changeNumber(numIn) {
+        numIn +=100;
+        console.log("num in function : " +numIn)
+    }
+    // pass by value (đối số truyền vào có kiểu số nguyên thủy)
+    // Tham số (numIn) copy giá trị từ đối số (numOut)
+    // => khi numIn thay đổi sẽ không làm numOut thay đổi
+    let numOut = 10;
+    console.log("number before change : " + numOut);
+
+    changeNumber(numOut);
+    console.log("number after called changNumber: "+numOut);
+
+
+</script>
+</body>
+</html>

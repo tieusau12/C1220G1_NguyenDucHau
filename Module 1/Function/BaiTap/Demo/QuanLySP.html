@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhap" placeholder="Tên Sản phẩm"> <input type="button" value="Thêm mới " onclick="themMoi()">
+<p id="hienThi"></p>
+<script>
+    let danhSachSP = ["iphone", "Nokia", "SamSung"];
+    hienThi();
+    // hàm hiện thị
+    function hienThi() {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>TênSP</th>\n' +
+            '        <th>Sửa</th>\n' +
+            '        <th>Xóa</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < danhSachSP.length; i++) {
+            tableString += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + danhSachSP[i] + '</td>\n' +
+                '        <td> <button onclick="suaSP(' + i + ')">Sửa</button></td>\n' +
+                '        <td><button onclick="xoaSP(' + i + ')">Xóa</button></td>\n' +
+                '    </tr>';
+        }
+        tableString += '</table>';
+        document.getElementById("hienThi").innerHTML = tableString;
+    }
+// hàm xóa sản phẩm
+    function xoaSP(id) {
+        let xacNhanXoa = confirm("Bạn có muốn xóa " + danhSachSP[id]);
+        if (xacNhanXoa) {
+            danhSachSP.splice(id, 1);
+        }
+        hienThi();
+    }
+// hàm sửa thông tin sản phầm
+    function suaSP(id) {
+        let tenSPMoi = prompt("Bạn nhập tên sp mới");
+        if (tenSPMoi) {
+            danhSachSP[id] = tenSPMoi;
+        }
+        hienThi();
+    }
+// hàm thêm mới sản phẩm
+    function themMoi() {
+        let tenSP = document.getElementById("nhap").value;
+        if (tenSP != "") {
+            danhSachSP.push(tenSP);
+        } else {
+            alert("bạn cần phải nhâp tên")
+        }
+        document.getElementById("nhap").value = "";
+        hienThi();
+    }
+</script>
+</body>
+</html>

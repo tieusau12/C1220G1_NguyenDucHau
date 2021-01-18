@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra tính đối xứng</title>
+</head>
+<body>
+<script>
+    function kiemTraDoiXung(array) {
+        for( let i = 0; i <= array.length/2; i ++ ){
+            if (array[i] !== array[array.length-1-i]){
+                return false;
+            }
+        }
+    }
+    let a = prompt( " nhập vào ký tự : ");
+    alert(kiemTraDoiXung(a));
+</script>
+</body>
+</html>

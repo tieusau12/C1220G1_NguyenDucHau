@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quản lí sản phẩm tự làm </title>
+</head>
+<body>
+<form>
+    <fieldset style="margin-right: 70%">
+        <legend>Bảng quản lí</legend>
+        <input type="text" placeholder="Nhập tên sản phẩm " id="tenSP"> <input type="button" value="Thêm sản phẩm "
+                                                                               onclick="themMoi()">
+        <br> <br>
+        <input type="text" placeholder="Tên sản phẩm cần tìm" id="timSP"> <input type="button" value="Tìm kiếm"
+                                                                                 onclick="timKiem()"><br>
+        <p id="pro"></p>
+        <p id="hienthi"></p>
+
+    </fieldset>
+</form>
+<script>
+    let danhSach = ["Vinamilk", "Nutifood", "TH True Milk", "Nestle", "Dutch Lady"];
+    hienTHi();
+
+    function hienTHi() {
+        let a = ' <table>' +
+                '<tr>' +
+                    '<th>   Product :   </th>' +
+                    '<th>' + danhSach.length + ' </th>' +
+                '</tr>' +
+            '</table>';
+        document.getElementById("pro").innerHTML = a;
+        let danhsachString = '<table border="1 px"> \n' +
+            ' <tr> \n' +
+                ' <th>STT</th> \n' +
+                ' <th>Hãng Sữa</th> \n' +
+                ' <th>Chỉnh sửa</th> \n' +
+                ' <th>Xóa </th> \n' +
+            ' </tr>';
+
+        for (let i = 0; i < danhSach.length; i++) {
+            danhsachString +=
+                '<tr> \n' +
+                     '<td>' + (i + 1) + '</td> \n' +
+                    ' <td>' + danhSach[i] + '</td> \n' +
+                    ' <td> <input type="button" onclick="chinhSua(' + i + ')" value="Chỉnh sửa"> </td> \n' +
+                    ' <td><input type="button" onclick="xoa(' + i + ')" value="Xóa"> </td> \n' +
+                ' </tr>'
+        }
+        danhsachString += '</table>';
+        document.getElementById("hienthi").innerHTML = danhsachString;
+    }
+
+    function xoa(id) {
+        let del = confirm(" Bạn thật sự muốn xóa ?");
+        if (del) {
+            danhSach.splice(id, 1);
+        }
+        hienTHi();
+    }
+
+    function chinhSua(id) {
+        let tenSPMoi = prompt(" Nhập tên sản phẩm mới ");
+        if (tenSPMoi) {
+            danhSach[id] = tenSPMoi;
+        }
+        hienTHi();
+    }
+
+    function themMoi() {
+        let tenSP = document.getElementById("tenSP").value;
+        if (tenSP !== "") {
+            danhSach.push(tenSP);
+        } else {
+            alert("Bạn cần nhập tên sản phẩm mới!! ");
+        }
+        document.getElementById("tenSP").value = "";
+        hienTHi();
+    }
+
+    function timKiem() {
+        let tim = document.getElementById("timSP").value;
+        for (let i = 0; i < danhSach.length; i++) {
+            if (tim === danhSach[i]) {
+                alert(" Sản phẩm bạn tìm ở vị trí " + (danhSach.indexOf(tim) + 1));
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

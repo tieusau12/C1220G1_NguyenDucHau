@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý Sản Phẩm</title>
+</head>
+<body>
+<input type="text" id="nhap" placeholder="Nhập tên sản phẩm"> <input type="button" value="Thêm mới" onclick="themMoi()"> <br>
+ <br>
+<input type="text" id="timkiem" placeholder=" Nhập tên cần tìm kiếm"> <input type="button" value="Tìm kiếm" onclick="timKiem()"> <br> <br>
+<p id="hienthi"></p>
+<script>
+    let danhSach = ["Nokia", "Iphone", "SamSung", "VinSmart"];
+    hienThi();
+
+    function hienThi() {
+        let tableString = '  <table border="5"> \n'
+            + '<tr> '
+                  + '<th>STT</th> \n'
+                  + '<th>Product Name</th> \n'
+                  + '<th> Sửa </th> \n'
+                  + '<th> Xóa</th> \n'
+            + '</tr>';
+        for (let i = 0; i < danhSach.length; i++) {
+            tableString +=
+                '<tr> \n' +
+                      '<td>' + (i+1) + '</td> \n' +
+                      '<td>' + danhSach[i] + '</td> \n' +
+                      '<td><input type="button" onclick="suaSP('+i+')" value="Sửa"></td> \n' +
+                      '<td> <input type="button" onclick="xoaSP('+i+')" value="Xóa"></td> \n' +
+                ' </tr> \n'
+        }
+        tableString += '</table>';
+        document.getElementById("hienthi").innerHTML = tableString;
+    }
+    function themMoi() {
+        let tenSP = document.getElementById("nhap").value;
+        if (tenSP !==""){
+            danhSach.push(tenSP);
+        }else {
+            alert(" bạn cần phải nhập tên sản phẩm ");
+        }
+        document.getElementById("nhap").value = "";
+        hienThi();
+    }
+    function suaSP(id) {
+        let tenSPMoi = prompt(" Nhập tên sản phẩm mới ");
+        if (tenSPMoi){
+            danhSach[id] =  tenSPMoi;
+        }
+        hienThi();
+    }
+    function xoaSP(id) {
+        let xacNhanXoa = confirm(" Bạn có thật sự muốn xóa ? ");
+        if (xacNhanXoa){
+            danhSach.splice(id,1);
+        }
+        hienThi();
+    }
+    function timKiem() {
+        let timSP = document.getElementById('timkiem').value;
+        for(let i=0; i<danhSach.length; i++){
+            if (timSP === danhSach[i]) {
+               alert("Sản phẩm bạn tìm kiếm ở vị trí " +( danhSach.indexOf(timSP)+1));
+            }
+        }
+    }
+</script>
+</body>
+</html>
