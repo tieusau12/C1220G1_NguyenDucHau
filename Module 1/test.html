@@ -1,12 +1,32 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Mô tả hình chữ nhật</title>
 </head>
 <body>
+<canvas id="myCanvas" width="600px" height="300px" style="border: 1px solid"></canvas>
 <script>
-
+    class rectangle{
+        constructor(height , width) {
+            this.height = height;
+            this.width = width;
+        }   canvas(){
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            let area = this.height * this.width;
+            let perimeter = (parseInt(this.height) + parseInt(this.width)) * 2;
+            ctx.beginPath();
+            ctx.fillStyle = "rgb(255,60,60)";
+            ctx.fillRect(250,150,this.width,this.height);
+            document.write("<br>"+ "Diện tích hình chữ nhật " + area + "<br>");
+            document.write("Chu vi hình chữ nhật " + perimeter + "<br>");
+        }
+    }
+    let a = prompt("Nhập chiều cao hình chữ nhật");
+    let b = prompt("Nhập chiều rộng hình chữ nhật");
+    let Rectangle = new rectangle(a,b);
+    Rectangle.canvas()
 </script>
 </body>
 </html>

@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(c, f, kelvin) {
+            this.celius = c;
+            this.fahren = f;
+            this.kelvin = kelvin;
+        }
+
+        change() {
+            this.fahren = (this.celius * 1.8) + 32;
+            this.kelvin = this.celius + 273.5
+        }
+    }
+
+    let temper = new Temperature(25);
+    temper.change();
+    alert(temper.fahren);
+    alert(temper.kelvin);
+
+</script>
+</body>
+</html>
