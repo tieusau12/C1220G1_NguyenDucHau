@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hoạt động Đèn pin</title>
+</head>
+<body>
+<script>
+    class Battery{
+        constructor(energy) {
+            this.energy = energy;
+            this.decreaseEnergy = [];
+        }
+        setEnergy (energy){
+             this.energy = energy ;
+        }
+        getEnergy (){
+            return this.energy;
+        }
+        decreaseEnergy (){
+            if (this.energy >0){
+                this.energy -- ;
+            }
+        }
+    }
+
+    class FlashLamp{
+        constructor(status,battery) {
+            this.status = status;
+            this.battery =battery;
+        }
+        setBattergy(battery){
+            this.battery = battery ;
+        }
+        getBatteryInfo(){
+            return this.battery.getEnergy();
+        }
+        light(){
+            if (this.status){
+                alert("Đèn đang sáng");
+            }else {
+                alert("Đèn không sáng");
+            }
+        }
+        turnOn(){
+            this.status =true;
+        }
+        turnOff(){
+            this.status = false;
+        }
+    }
+    let battery =new Battery();
+    battery.setEnergy(10);
+    let flashlamp = new FlashLamp();
+    flashlamp.setBattergy(battery);
+    document.write("Battery info:" + flashlamp.getBatteryInfo() + "<br/>");
+    flashlamp.light();
+    document.write("Turn on<br/>");
+    flashlamp.turnOn();
+    flashlamp.light();
+    document.write("Battery info:" + flashlamp.getBatteryInfo() + "<br/>");
+    document.write("Turn off<br/>");
+    flashlamp.turnOff();
+    flashlamp.light();
+</script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam and Eva</title>
+</head>
+<body>
+<h1 style="text-align: center">Adam & Eva xin chào mọi người =))</h1>
+<table style="text-align: center" width="70%">
+    <tr>
+        <th>Human 1</th>
+        <th>Human 2</th>
+        <th>Quả táo 1</th>
+        <th>Quả táo 2</th>
+
+    </tr>
+    <tr>
+        <td>
+            <button onclick="nameHuman1()">Tên Human 1</button>
+        </td>
+        <td>
+            <button onclick="nameHuman2()">Tên Human 2</button>
+        </td>
+        <td>
+            <button onclick="createApple1()">Tạo quả táo 1</button>
+        </td>
+        <td>
+            <button onclick="createApple2()">Tạo quả táo 2</button>
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <button onclick="genderHuman1()">Giới tính Human 1</button>
+        </td>
+        <td>
+            <button onclick="genderHuman2()">Giới tính Human 2</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="weightHuman1()">Cân nặng Human 1</button>
+        </td>
+        <td>
+            <button onclick="weightHuman2()">Cân nặng Human 2</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="humanAction1()">Chào hỏi</button>
+        </td>
+        <td>
+            <button onclick="humanAction2()">Chào hỏi</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="human1Check1()">Kiểm tra quả táo</button>
+        </td>
+        <td>
+            <button onclick="human2Check2()">Kiểm tra quả táo</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="eatApple1()">Ăn quả táo</button>
+        </td>
+        <td>
+            <button onclick="eatApple2()">Ăn quả táo</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="inforHuman2()">Kiểm tra thông tin</button>
+        </td>
+        <td>
+            <button onclick="inforHuman1()">Kiểm tra thông tin</button>
+        </td>
+    </tr>
+</table>
+
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        eat(status) {
+            if (status) {
+                this.weight++;
+            }
+        }
+
+        checkApple(apple) {
+            alert(apple);
+        }
+
+        checkHuman(name, gender, weight) {
+            alert("Tên đối phương : " + name + "\n" +
+                "Giới tính : " + gender + "\n" +
+                "Cân nặng :" + weight)
+        }
+
+        humanAction(orther) {
+            alert(" Xin chào tôi là : " + this.name + orther);
+        }
+    }
+
+    let adam = new Human("Adam", "Male", 75);
+    let eva = new Human("Eva", "Females", 45);
+    let apple1 = 0;
+    let apple2 = 0;
+    let status = false;
+
+    function createApple1() {
+        return apple1 = new Apple(10)
+    }
+
+    function createApple2() {
+        return apple2 = new Apple(10)
+    }
+
+    function nameHuman1() {
+        alert(adam.name);
+    }
+
+    function nameHuman2() {
+        alert(eva.name);
+    }
+
+    function genderHuman1() {
+        alert(adam.gender);
+    }
+
+    function genderHuman2() {
+        alert(eva.gender);
+    }
+
+    function weightHuman1() {
+        alert(adam.weight);
+    }
+
+    function weightHuman2() {
+        alert(eva.weight);
+    }
+
+    function humanAction1() {
+        adam.humanAction(" đẹp trai ");
+    }
+
+    function humanAction2() {
+        eva.humanAction(" xinh gái ");
+    }
+
+    function eatApple1() {
+        if (apple1 === 0) {
+            alert("Táo chưa chín");
+            status = false;
+            adam.eat(status);
+        } else {
+            alert(adam.name + " vừa ăn 1 miếng táo");
+            apple1.weight--;
+            status = true;
+            adam.eat(status);
+        }
+    }
+
+    function eatApple2() {
+        if (apple2 === 0) {
+            alert("Táo chưa chín");
+            status = false;
+            eva.eat(status);
+        } else {
+            alert(eva.name + " vừa ăn 1 miếng táo");
+            apple2.weight--;
+            status = true;
+            eva.eat(status);
+        }
+    }
+
+    function human1Check1() {
+        if (apple1 ===0){
+            alert("Táo chưa chín ")
+        } else {
+            adam.checkApple(apple1.weight);
+        }
+    }
+
+    function human2Check2() {
+        if (apple2 === 0) {
+            alert("Táo chưa chín ")
+        } else {
+            adam.checkApple(apple2.weight);
+        }
+    }
+    function inforHuman2() {
+        adam.checkHuman(eva.name,eva.gender,eva.weight);
+    }
+
+    function inforHuman1() {
+        eva.checkHuman(adam.name, adam.gender, adam.weight);
+    }
+</script>
+</body>
+</html>
