@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="img"><img src="https://www.w3schools.com/js/pic_bulboff.gif"></p>
+<button onclick="turnOn()"> Bật / Tắt</button>
+<script>
+    class Switch {
+        constructor() {
+            this.status = false;
+        }
+
+        onoff() {
+            this.status = !this.status;
+        }
+    }
+
+    class Lamp {
+        turnOn(status) {
+            if (status === true) {
+                document.getElementById("img").innerHTML = '<img src="https://www.w3schools.com/js/pic_bulbon.gif">'
+            } else {
+                document.getElementById("img").innerHTML = '<img src="https://www.w3schools.com/js/pic_bulboff.gif">'
+            }
+        }
+    }
+    let switch1 = new Switch();
+    let lamp = new Lamp();
+    function turnOn() {
+        switch1.onoff();
+        lamp.turnOn(switch1.status);
+    }
+</script>
+</body>
+</html>
