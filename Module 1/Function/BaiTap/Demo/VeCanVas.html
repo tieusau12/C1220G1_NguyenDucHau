@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="cavas1" style="height: 200px"></canvas>
+<canvas id="cavas2" style="height: 200px"></canvas>
+<script>
+    class HinhCN{
+        constructor(dai, rong) {
+            this.dai=dai;
+            this.rong=rong
+        }
+        dienTich(){
+            return this.dai*this.rong;
+        }
+        chuVi(){
+            return (this.dai+this.rong)*2;
+        }
+        draw(cavas){
+            let ctx = cavas.getContext("2d");
+            ctx.fillStyle="red";
+            ctx.rect(50,50,this.dai,this.rong)
+            ctx.stroke();
+            ctx.fill();
+        }
+    }
+
+
+let hcn = new HinhCN(20,30);
+    let c1 = document.getElementById("cavas1");
+    let c2 = document.getElementById("cavas2");
+    hcn.draw(c1);
+    hcn.draw(c2);
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Tạo đối tượng trực tiếp
+    //     let student ={name: "Đông", age: 18, study: function (subject) {
+    //                     alert("Môn học :" +subject);
+    //         }}
+    //
+    //         alert(student.name);
+    //         alert(student.age);
+    //         student.study("Toán")
+
+    // tạo đối tượng bằng class (dùng cách này)
+    class Student {
+        constructor(ten, tuoi) {
+            this._name = ten;
+            this.age = tuoi;
+        }
+
+        getName() {
+            return this._name;
+        }
+
+        setName(ten) {
+            this.name = ten;
+        }
+
+        getAge() {
+            return this.age;
+        }
+
+        setAge(tuoi) {
+            this.age = tuoi;
+        }
+
+        study(monHoc) {
+            alert("Đang học môn: " + monHoc);
+        }
+    }
+    // Sau khi cài đặt class Student => đi sử dụng để tạo đối tượng
+    // ví dụ tạo 4 dối tượng sinhVien từ class Student
+    let sinhVien1 = new Student("Đông", 24);
+    let sinhVien2 = new Student("Kha", 23);
+    let sinhVien3 = new Student("Thăng", 22);
+    let sinhVien4 = new Student("Kiên", 21);
+
+    // hiện thị tên tên sinhVien1 => truy cập trực tiếp vào thuộc tính name (hiện thị)
+    alert(sinhVien1.name);
+    // cũng có thể sử dụng phương thức getName() để lấy tên của đôi tượng sinhVien1 (hiện thị)
+    // alert(sinhVien1.getName())
+
+    // đặt lại tên cho sinhVien1
+    sinhVien1.setName("Tà");
+    // cũng có thể đặt lại tên cho sinhVien1 bằng cách truy cập trực tiếp vào thuộc tính name
+    // sinhVien1.name="Tà";
+
+    //sau khi đặt lại tên thì hiện thị lại xem tên thế nào nhé
+    alert("Tên sau khi đã thay đổi: "+ sinhVien1.getName());
+    // gọi phương thức study()
+    sinhVien1.study("Tiếng Anh");
+
+    // tạo đối tượng bằng function (không nên dùng nữa)
+
+    function SinhVien(ten,tuoi){
+        this.name=ten;
+        this.age =tuoi;
+        this.study =function (monHoc) {
+            alert("Đang học Môn: " +monHoc);
+        };
+        this.getName= function() {
+            return this.name;
+        };
+
+        this.setName=function(ten) {
+            this.name = ten;
+        };
+
+        this.getAge=function() {
+            return this.age;
+        };
+
+        this.setAge= function(tuoi) {
+            this.age = tuoi;
+        };
+
+    }
+// tạo đối tượng sinhVien6 từ function SinhVien
+    let sinhVie6 = new SinhVien("Chánh", 34);
+    // hiện thị tên sinh viên dùng phương thức getName()
+    alert(sinhVie6.getName());
+
+    // gọi phương thức study() của sinhVien6
+    sinhVie6.study("sinh học")
+
+
+
+
+</script>
+</body>
+</html>

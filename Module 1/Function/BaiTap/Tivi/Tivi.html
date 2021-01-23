@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="hinhTV.jpg" id="tivi" style="height: 300px;width: 500px">
+
+<fieldset style="width: 250px">
+    <div style="width: 250px">
+        <input type="button" value="On/Off" onclick="turnOnOff()" style="width: 50px; height: 40px">
+        <input type="button" value="1" onclick="change(this.value);" style="width: 40px; height: 40px">
+        <input type="button" value="2" onclick="change(this.value);" style="width: 40px; height: 40px">
+        <input type="button" value="3" onclick="change(this.value);" style="width: 40px; height: 40px">
+        <input type="button" value="4" onclick="change(this.value);" style="width: 40px; height: 40px">
+        <input type="button" value="5" onclick="change(this.value);" style="width: 40px; height: 40px">
+        <input type="button" value="6" onclick="change(this.value);" style="width: 40px; height: 40px">
+        <input type="button" value="7" onclick="change(this.value);" style="width: 40px; height: 40px">
+        <input type="button" value="8" onclick="change(this.value);" style="width: 40px; height: 40px">
+        <input type="button" value="9" onclick="change(this.value);" style="width: 40px; height: 40px">
+    </div>
+    <div>
+        <input type="button" value="+" onclick="upDownChannel(this.value);" style="width: 40px; height: 40px">
+        Channel
+        <input type="button" value="-" onclick="upDownChannel(this.value);" style="width: 40px; height: 40px">
+    </div>
+</fieldset>
+<script>
+    class Tivi {
+        constructor() {
+            this.kenh = 0;
+            this.amLuong = 0;
+            this.trangThai = false;
+        }
+
+        setKenhTV(kenh) {
+            if (this.trangThai) {
+                this.kenh = kenh;
+            }
+        }
+
+        setAmLuongTV(amLuong) {
+            this.amLuong = amLuong;
+        }
+
+        setTrangThaiTV(trangThai) {
+            this.trangThai = trangThai;
+        }
+
+        getKenhTV() {
+            return this.kenh;
+        }
+
+        getAmLuongTV() {
+            return this.amLuong;
+        }
+
+        getTrangThaiTV() {
+            return this.trangThai;
+        }
+
+        batTatTV() {
+            this.trangThai = !this.trangThai;
+        }
+
+        tangKenhTV() {
+            if (this.trangThai) {
+                this.kenh++;
+            }
+
+        }
+
+        giamKenhTV() {
+            if (this.trangThai) {
+                this.kenh--;
+            }
+        }
+
+        tangAmLuongTV() {
+            if (this.trangThai) {
+                this.amLuong++;
+            }
+        }
+
+        giamAmLuongTV() {
+            if (this.trangThai) {
+                this.amLuong--;
+            }
+
+        }
+    }
+
+    class Remote {
+        constructor(tivi) {
+            this.tivi = tivi;
+        }
+
+        batTatRM() {
+            this.tivi.batTatTV();
+        }
+
+        tangKenhRM() {
+            this.tivi.tangKenhTV();
+        }
+
+        giamKenhRM() {
+            this.tivi.giamKenhTV();
+        }
+
+        tangAmLuongRM() {
+            this.tivi.tangAmLuongTV();
+        }
+
+        giamAmLuongRM() {
+            this.tivi.giamAmLuongTV();
+        }
+
+        setKenhRM(kenh) {
+            this.tivi.setKenhTV(kenh)
+        }
+    }
+
+    let tivi = new Tivi();
+    let remote = new Remote(tivi);
+    let tiviObj = document.getElementById('tivi');
+    let arrayChannel = ["hinhTV0.jpg", "hinhTV1.jpg", "hinhTV2.jpg", "hinhTV3.jpg", "hinhTV4.jpg", "hinhTV5.jpg", "hinhTV6.jpg",
+        "hinhTV7.jpg", "hinhTV8.jpg", "hinhTV9.jpg"];
+
+    function turnOnOff() {
+        remote.batTatRM();
+        if (tivi.getTrangThaiTV()) {
+            tiviObj.src = "hinhTV0.jpg"
+        } else {
+            tiviObj.src = "hinhTV.jpg"
+        }
+    }
+
+    function change(channel) {
+        if (tivi.getTrangThaiTV()) {
+            remote.setKenhRM(channel);
+            tiviObj.src = arrayChannel[tivi.getKenhTV()]
+        }
+    }
+
+    function upDownChannel(upDown) {
+        if (tivi.getTrangThaiTV()) {
+            if (upDown === "+") {
+                remote.tangKenhRM();
+                tiviObj.src = arrayChannel[tivi.getKenhTV()]
+            } else {
+                remote.giamKenhRM();
+                tiviObj.src = arrayChannel[tivi.getKenhTV()]
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

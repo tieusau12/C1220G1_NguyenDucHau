@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    class Mobile {
+        constructor(pin, name, status) {
+            this.pin = pin;
+            this.smsSoanThao = [];
+            this.smsthuDen = [];
+            this.smsthuDi = [];
+            this.name = name;
+            this.status = status;
+        }
+        isStatus() {
+            if (this.status) {
+                return true;
+            } else {
+                alert("Điện thoại đang tắt");
+                return false;
+            }
+        }
+        onOffMobile() {
+            if (this.status) {
+                this.status = false;
+            } else {
+                this.status = true;
+                this.pin--;
+            }
+        }
+        chargePin() {
+            if (this.pin < 5) {
+                while (this.pin <= 100) {
+                    this.pin += 0.0000001;
+                }
+                alert("đã đầy pin");
+            }
+        }
+        soansms() {
+            if (this.isStatus()) {
+                // this.chargePin();
+                let sms = prompt("Nhập nội dung tin nhắn");
+                this.smsSoanThao.push(sms);
+                this.pin--;
+            }
+        }
+        guisms(mobile) {
+            if (this.isStatus) {
+                this.chargePin();
+                if (this.smsSoanThao.length === 0) {
+                    this.soansms();
+                    mobile.smsthuDen.push("Người gửi: " + this.name + ". " + this.smsSoanThao[0]);
+                    this.smsthuDi.push("Gửi cho: " + mobile.name + ". " + this.smsSoanThao[0]);
+                    this.smsSoanThao.shift();
+                } else {
+                    let temp = "";
+                    for (let i = 0; i < this.smsSoanThao.length; i++) {
+                        temp += i + ". " + this.smsSoanThao[i] + "\n";
+                    }
+                    let index = parseInt(prompt("Chọn tin nhắn muốn gửi: \n" + temp));
+                    mobile.smsthuDen.push("Người gửi: " + this.name + ". " + this.smsSoanThao[index]);
+                    this.smsthuDi.push("Gửi cho: " + mobile.name + ". " + this.smsSoanThao[index]);
+                    this.smsSoanThao.splice(index, 1);
+                }
+                this.pin--;
+            }
+        }
+        xemsms() {
+            if (this.isStatus()) {
+                this.chargePin();
+                let temp = "";
+                for (let i = 0; i < this.smsthuDen.length; i++) {
+                    temp += i + ". " + this.smsthuDen[i] + "\n";
+                }
+                alert(temp);
+                this.pin--;
+            }
+        }
+    }
+    let nokia = new Mobile(4, "nokia", true);
+    let iphone = new Mobile(90, "iphone", true);
+    nokia.soansms();
+    nokia.guisms(iphone);
+    iphone.xemsms();
+</script>
+</body>
+
+</html>
