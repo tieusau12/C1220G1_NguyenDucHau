@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 4</title>
+</head>
+<body>
+<script>
+    let arrayName = [];
+    let exit;
+    let arrayAdd = [];
+    let choose;
+    let list = "";
+    do {
+        exit = false;
+        choose = prompt("1. Add Name Customer." + "\n" +
+            "2. Delete Customer." + "\n" +
+            "3. Exit." + "\n");
+        switch (choose) {
+            case "1":
+                addCustomer();
+                break;
+
+            case "2":
+                deleteCustomer();
+                break;
+            case "3":
+                exit = confirm("Bạn có muốn thoát !");
+                break;
+        }
+    } while (exit === false);
+
+    function addCustomer() {
+        let soLuong = parseInt(prompt("Nhập số lượng customer bạn muốn thêm: "));
+        for (let i = 0; i < soLuong; i++) {
+            arrayAdd[i] = prompt("Nhập tên thứ " + (i + 1) + ": ");
+        }
+
+        arrayName = arrayName.concat(arrayAdd);
+        arrayName.sort();
+        for (let i = 0; i < arrayName.length; i++) {
+            list += (i + 1) + ". " + arrayName[i] + "\n";
+        }
+        alert(list);
+        list = "";
+    }
+
+    function deleteCustomer() {
+        list = "";
+        for (let i = 0; i < arrayName.length; i++) {
+            list += (i + 1) + ". " + arrayName[i] + "\n";
+        }
+        let del = prompt(list + "Nhập vào tên muốn xóa khỏi danh sách: ");
+        for (let i = 0; i < arrayName.length; i++) {
+            if (i == del) {
+                arrayName.splice((i - 1), 1);
+            }
+        }
+        arrayName.sort();
+        list = "";
+        for (let i = 0; i < arrayName.length; i++) {
+            list += (i + 1) + ". " + arrayName[i] + "\n";
+        }
+        alert(list);
+        list = "";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 5</title>
+
+</head>
+<body>
+<script>
+    let arrayName = [];
+    let choose;
+    let name;
+    let id;
+    let birth;
+    let email;
+    let address;
+    let customerType;
+    let discount;
+    let accompany;
+    let rentDays;
+    let serviceType;
+    let roomType;
+    let arrayAdd = [];
+
+    function displayMenu() {
+        do {
+            choose = parseInt(prompt("1. Add Name Customer." + "\n" +
+                "2. Display Information Customer." + "\n" +
+                "3. Edit Information Customer." + "\n" +
+                "4. Delete Customer." + "\n" +
+                "5. Exit."));
+            switch (choose) {
+                case 1:
+                    addName();
+                    break;
+                case 2:
+                    displayName();
+                    break;
+                case 3:
+                    displayEdit();
+                    break;
+                case 4:
+                    deleteName();
+                    break;
+                case 5:
+                    alert("Good bye!");
+                    break;
+            }
+        } while (choose !== 5);
+    }
+
+    function addName() {
+        name = prompt(" Your Name : ");
+        id = prompt("ID card: ");
+        birth = prompt("Date of birth: ");
+        email = prompt("Email: ");
+        address = prompt("Address: ");
+        customerType = prompt("Type of Customer: ");
+        discount = prompt("Discount: ");
+        accompany = prompt("Quantity Accompany: ");
+        rentDays = prompt("Rent Days: ");
+        serviceType = prompt("Type of Service: ");
+        roomType = prompt("Type of Room: ");
+        arrayAdd = [name, id, birth, email, address, customerType, discount, accompany, rentDays, serviceType, roomType];
+        arrayName.push(arrayAdd);
+    }
+
+    function displaySelection(array) {
+        let customerInfo = "";
+        for (let i = 0; i < array.length; i++) {
+            customerInfo += (i + 1 + ". " + array[i][0] + "\n");
+        }
+        let listAdd = customerInfo;
+        return parseInt(prompt(listAdd +
+            (arrayName.length + 1) + ". Back to menu"));
+    }
+
+    function displayName() {
+        let number = displaySelection(arrayName);
+        for (let i = 0; i < arrayName.length; i++) {
+            switch (number) {
+                case (i + 1):
+                    let printName = "Information Customer:" + "\n";
+                    for (let j = 0; j < arrayName[i].length; j++) {
+                        printName += arrayName[i][j] + "\n";
+                    }
+                    alert(printName);
+                    break;
+                case arrayName.length + 1:
+                    break;
+            }
+        }
+    }
+
+    function displayEdit() {
+        let number = displaySelection(arrayName);
+        let printName = "";
+        for (let i = 0; i < arrayName.length; i++) {
+            switch (number) {
+                case (i + 1):
+                    printName = "Edit Information: " + "\n";
+                    for (let j = 0; j < arrayName[i].length; j++) {
+                        printName += (j + 1) + ". " + arrayName[i][j] + "\n";
+                    }
+                    let chooseToEdit = parseInt(prompt(printName +
+                        (arrayName[i].length + 1) + ". Back to menu."));
+                    for (let k = 0; k < arrayName[i].length; k++) {
+                        switch (chooseToEdit) {
+                            case (k + 1):
+                                let editInfo = prompt("Enter info you want to edit: ");
+                                switch (chooseToEdit) {
+                                    case 1:
+                                        arrayName[i][k] = "Name: " + editInfo;
+                                        break;
+                                    case 2:
+                                        arrayName[i][k] = "ID Card: " + editInfo;
+                                        break;
+                                    case 3:
+                                        arrayName[i][k] = "Date of birth: " + editInfo;
+                                        break;
+                                    case 4:
+                                        arrayName[i][k] = "Email: " + editInfo;
+                                        break;
+                                    case 5:
+                                        arrayName[i][k] = "Address: " + editInfo;
+                                        break;
+                                    case 6:
+                                        arrayName[i][k] = "Type of Customer: " + editInfo;
+                                        break;
+                                    case 7:
+                                        arrayName[i][k] = "Discount: " + editInfo;
+                                        break;
+                                    case 8:
+                                        arrayName[i][k] = "Rent Days: " + editInfo;
+                                        break;
+                                    case 9:
+                                        arrayName[i][k] = "Quantity Accompany: " + editInfo;
+                                        break;
+                                    case 10:
+                                        arrayName[i][k] = "Type of Service: " + editInfo;
+                                        break;
+                                    case 11:
+                                        arrayName[i][k] = "Type of Room: " + editInfo;
+                                        break;
+                                    case 12:
+                                        displayEdit(arrayName);
+                                        break;
+                                }
+                                break;
+                            case arrayName[i].length + 1:
+                                break;
+                        }
+                    }
+                    break;
+                case arrayName.length + 1:
+                    break;
+            }
+        }
+    }
+
+    function deleteName() {
+        let number = displaySelection(arrayName);
+        for (let i = 0; i < arrayName.length; i++) {
+            switch (number) {
+                case (i + 1):
+                    arrayName.splice(i, 1);
+                    break;
+                case arrayName.length + 1:
+                    break;
+            }
+        }
+    }
+
+    displayMenu();
+</script>
+</body>
+</html>
