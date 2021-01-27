@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt(" Enter n :"));
+    let sum = 0;
+    function factorial(n) {
+        let temp = 1;
+        for (let i = 1; i <= n; i++) {
+            temp *= i;
+        }
+        return temp;
+    }
+
+    for (let i = 1; i <= n; i++) {
+        sum += 1 / factorial((2 * i - 1));
+    }
+    document.write("Sum =" + sum);
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Enter n :"));
+    let sum =15;
+    let temp =1;
+    for (let i = 1; i <= n; i++){
+        temp *=i;
+        sum += Math.pow((-1),i)/temp;
+    }
+    document.write("Sum = "+ sum);
+</script>
+</body>
+</html>

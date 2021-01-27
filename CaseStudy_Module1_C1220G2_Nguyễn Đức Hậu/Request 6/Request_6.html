@@ -128,7 +128,7 @@
     }
     let listArrCustomer = [];
     let regEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    let regIdCard = /[0-9]{9}/;
+    let regIdCard = /[0-9]{8}/;
     let regBirthDay = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{2}$/;
     let regNumber = /[0-9]/;
     do {
@@ -229,7 +229,7 @@
         let inputNumber = prompt("Chọn customer để hiển thị thông tin \n" + text);
         alert("Tên khách hàng: " + listArrCustomer[inputNumber - 1].getName() + '\n' +
             "Số CMND: " + listArrCustomer[inputNumber - 1].getIdCard() + '\n' +
-            "Ngày sinh: " + listArrCustomer[inputNumber - 1].getBirthDay() + '\n' +
+            "Ngày sinh: " + listArrCustomer[inputNumber - 1].getBirthDay() + '\n' +``
             "Email: " + listArrCustomer[inputNumber - 1].getEmail() + '\n' +
             "Địa chỉ: " + listArrCustomer[inputNumber - 1].getIdCard() + '\n' +
             "Thẻ thành viên: " + listArrCustomer[inputNumber - 1].getTypeCustomer() + '\n' +
